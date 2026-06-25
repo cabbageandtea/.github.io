@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malik Lomax | Data Infrastructure & Technical Logistics</title>
+    <style>
+        :root {
+            --bg: #05050a;
+            --surface: #0b0c14;
+            --border: rgba(255, 255, 255, 0.05);
+            --border-hover: rgba(56, 189, 248, 0.4);
+            --text-primary: #f4f4f5;
+            --text-secondary: #a1a1aa;
+            --accent: #38bdf8;
+            --glow: rgba(56, 189, 248, 0.1);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-primary);
+            line-height: 1.5;
+            margin: 0;
+            letter-spacing: -0.01em;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            padding: 3rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--text-primary);
+        }
+
+        .brand span {
+            color: var(--accent);
+        }
+
+        .hero {
+            padding: 6rem 0 4rem 0;
+        }
+
+        h1 {
+            font-size: 2.75rem;
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -0.04em;
+            margin: 0 0 1.5rem 0;
+            background: linear-gradient(180deg, #ffffff 0%, #a1a1aa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 680px;
+            margin: 0;
+        }
+
+        .section-title {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 6rem;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 2rem;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .card:hover {
+            border-color: var(--border-hover);
+            box-shadow: 0 4px 30px var(--glow);
+            transform: translateY(-2px);
+        }
+
+        .card h3 {
+            margin: 0 0 0.75rem 0;
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .tag-container {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            font-family: monospace;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            color: var(--text-secondary);
+        }
+
+        footer {
+            padding: 4rem 0;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="brand">M. Lomax<span> // Architecture</span></div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <h1>High-throughput logistics infrastructure & engineered data systems.</h1>
+                <p>Developing robust data architectures, relational database systems, and end-to-end automation pipelines designed to eliminate operational friction and optimize supply chain integrity.</p>
+            </section>
+
+            <section id="work">
+                <div class="section-title">Production Systems</div>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Industrial Inventory Auditing & Relational Schema</h3>
+                        <p>Engineered high-performance relational database structures tailored for high-volume warehouse operations. Optimized SQL querying and indexing schemas to eliminate data latency, resolve transactional bottlenecks, and provide real-time metrics for mission-critical supply chain movements.</p>
+                        <div class="tag-container">
+                            <span class="tag">SQL</span>
+                            <span class="tag">Database Administration</span>
+                            <span class="tag">Schema Design</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Automated E-Commerce Ingestion Architecture</h3>
+                        <p>Designing decentralized data ingestion pipelines for dropshipping platforms. Utilizing automated scripts and API integration frameworks to continuously synchronize global vendor inventories, price modeling structures, and dynamic routing updates.</p>
+                        <div class="tag-container">
+                            <span class="tag">API Integration</span>
+                            <span class="tag">Automation</span>
+                            <span class="tag">Data Pipelines</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div>&copy; 2026 Malik Lomax. Execution at scale.</div>
+            <div>Built for deployment via GitHub Pages</div>
+        </footer>
+    </div>
+
+</body>
+</html>
