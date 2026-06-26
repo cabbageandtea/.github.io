@@ -310,6 +310,8 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
 
         .card::before {
@@ -368,11 +370,16 @@
             flex: 1;
         }
 
+        .card-body {
+            flex: 1;
+        }
+
         .tags {
             display: flex;
             gap: 0.5rem;
             margin-top: 1.5rem;
             flex-wrap: wrap;
+            margin-bottom: 1.5rem;
         }
 
         .tag {
@@ -393,6 +400,15 @@
         .tag:hover {
             background: rgba(56, 189, 248, 0.15);
             border-color: rgba(56, 189, 248, 0.4);
+        }
+
+        .card-footer {
+            margin-top: auto;
+        }
+
+        .card .btn-secondary {
+            width: 100%;
+            text-align: center;
         }
 
         /* Services */
@@ -535,7 +551,7 @@
                 </div>
                 <h1>Enterprise-scale data systems that eliminate friction.</h1>
                 <p class="hero-description">
-                    Architecting high-throughput logistics infrastructure, distributed database systems, and end-to-end automation pipelines for organizations operating at scale. Specializing in operational excellence and system reliability.
+                    Architecting high-throughput logistics infrastructure, distributed database systems, and end-to-end automation pipelines for organizations operating at scale. Specializing in [...]
                 </p>
                 <div class="cta-buttons">
                     <a href="#work" class="btn btn-primary">View Work</a>
@@ -573,14 +589,19 @@
                         <div class="card-icon">🗄️</div>
                         <div>
                             <h3>Industrial Inventory Management</h3>
-                            <p>Enterprise-grade relational database architecture for high-volume warehouse operations. Optimized indexing, distributed queries, and real-time synchronization handling 10M+ daily transactions.</p>
+                            <p>Enterprise-grade relational database architecture for high-volume warehouse operations. Optimized indexing, distributed queries, and real-time synchronization handl[...]</p>
                         </div>
                     </div>
-                    <div class="tags">
-                        <span class="tag">PostgreSQL</span>
-                        <span class="tag">Distributed Systems</span>
-                        <span class="tag">Real-time Sync</span>
-                        <span class="tag">Query Optimization</span>
+                    <div class="card-body">
+                        <div class="tags">
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">Distributed Systems</span>
+                            <span class="tag">Real-time Sync</span>
+                            <span class="tag">Query Optimization</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="https://gist.github.com/cabbageandtea/cd23ed9bf6418d8667dad1b96827343b" class="btn btn-secondary">View Work</a>
                     </div>
                 </div>
 
@@ -589,14 +610,16 @@
                         <div class="card-icon">🔄</div>
                         <div>
                             <h3>E-Commerce Data Ingestion</h3>
-                            <p>Decentralized data pipeline architecture for multi-channel dropshipping. Autonomous API integration, conflict resolution, and inventory reconciliation across 50+ sales channels simultaneously.</p>
+                            <p>Decentralized data pipeline architecture for multi-channel dropshipping. Autonomous API integration, conflict resolution, and inventory reconciliation across 50+ sa[...]</p>
                         </div>
                     </div>
-                    <div class="tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Event Streams</span>
-                        <span class="tag">API Integration</span>
-                        <span class="tag">Automation</span>
+                    <div class="card-body">
+                        <div class="tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Event Streams</span>
+                            <span class="tag">API Integration</span>
+                            <span class="tag">Automation</span>
+                        </div>
                     </div>
                 </div>
 
@@ -605,14 +628,16 @@
                         <div class="card-icon">📊</div>
                         <div>
                             <h3>Supply Chain Analytics</h3>
-                            <p>Real-time analytics platform aggregating data from 20+ supply chain sources. Custom dashboards, predictive modeling, and operational intelligence reducing processing latency by 85%.</p>
+                            <p>Real-time analytics platform aggregating data from 20+ supply chain sources. Custom dashboards, predictive modeling, and operational intelligence reducing processin[...]</p>
                         </div>
                     </div>
-                    <div class="tags">
-                        <span class="tag">BigQuery</span>
-                        <span class="tag">Data Warehouse</span>
-                        <span class="tag">Analytics</span>
-                        <span class="tag">ML Pipelines</span>
+                    <div class="card-body">
+                        <div class="tags">
+                            <span class="tag">BigQuery</span>
+                            <span class="tag">Data Warehouse</span>
+                            <span class="tag">Analytics</span>
+                            <span class="tag">ML Pipelines</span>
+                        </div>
                     </div>
                 </div>
 
@@ -621,14 +646,16 @@
                         <div class="card-icon">⚙️</div>
                         <div>
                             <h3>Logistics Automation Engine</h3>
-                            <p>Workflow orchestration platform automating 1000+ daily operational tasks. Intelligent routing, error handling, and self-healing mechanisms reducing manual intervention by 95%.</p>
+                            <p>Workflow orchestration platform automating 1000+ daily operational tasks. Intelligent routing, error handling, and self-healing mechanisms reducing manual intervent[...]</p>
                         </div>
                     </div>
-                    <div class="tags">
-                        <span class="tag">Workflow Orchestration</span>
-                        <span class="tag">Kubernetes</span>
-                        <span class="tag">CI/CD</span>
-                        <span class="tag">Infrastructure as Code</span>
+                    <div class="card-body">
+                        <div class="tags">
+                            <span class="tag">Workflow Orchestration</span>
+                            <span class="tag">Kubernetes</span>
+                            <span class="tag">CI/CD</span>
+                            <span class="tag">Infrastructure as Code</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -691,7 +718,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h4>Navigation</h4>
+                    <h3>Navigation</h3>
                     <ul>
                         <li><a href="#work">Work</a></li>
                         <li><a href="#services">Services</a></li>
@@ -699,7 +726,7 @@
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h4>Expertise</h4>
+                    <h3>Expertise</h3>
                     <ul>
                         <li><a href="#services">Database Architecture</a></li>
                         <li><a href="#services">Data Engineering</a></li>
@@ -707,7 +734,7 @@
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h4>Connect</h4>
+                    <h3>Connect</h3>
                     <ul>
                         <li><a href="mailto:hello@maliklomax.me">Email</a></li>
                         <li><a href="https://linkedin.com/in/maliklomax">LinkedIn</a></li>
