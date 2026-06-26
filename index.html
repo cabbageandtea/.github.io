@@ -7,106 +7,119 @@
   <meta name="description" content="Malik Lomax — 20 years logistics operations; pursuing B.S. in IT & Data Management; seeking Logistics Operations / Data Analysis roles in Beaver County / Pittsburgh." />
   <style>
     :root{
-      --bg:#f5f6f8;
-      --card:#ffffff;
-      --accent:#0b63d6;
-      --muted:#6b7280;
-      --text:#111318;
-      --maxw:980px;
-      --pad:24px;
-      --radius:8px;
-      --shadow:0 6px 20px rgba(12,18,28,0.06);
-      --glass:rgba(255,255,255,0.6);
+      --bg:#f6f7fb; --card:#ffffff; --accent:#0b63d6; --muted:#6b7280; --text:#0f1724;
+      --maxw:980px; --radius:10px; --pad:20px;
     }
-    html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
-    .wrap{max-width:var(--maxw);margin:40px auto;padding:20px}
-    header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px}
-    .nameblock{display:flex;align-items:center;gap:14px}
-    .badge{width:64px;height:64px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--accent);font-weight:700;font-size:20px;border:1px solid #e6e9ee}
-    h1{margin:0;font-size:20px;letter-spacing:0.2px}
-    p.lead{margin:0;color:var(--muted);font-size:13px}
-    .status{background:transparent;color:var(--muted);font-size:13px;border-left:3px solid var(--accent);padding:8px 12px;border-radius:6px}
-    main{display:grid;grid-template-columns:1fr 320px;gap:20px}
-    .card{background:var(--card);border-radius:var(--radius);padding:var(--pad);box-shadow:var(--shadow)}
-    .muted{color:var(--muted);font-size:14px;line-height:1.45}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;color:var(--text);background:var(--bg)}
+    .wrap{max-width:var(--maxw);margin:36px auto;padding:28px}
+    header{display:flex;gap:16px;align-items:center;justify-content:space-between;margin-bottom:18px}
+    .title{display:flex;gap:14px;align-items:center}
+    .avatar{width:72px;height:72px;border-radius:8px;background:#fff;border:1px solid #e6eefc;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent);font-size:20px}
+    h1{margin:0;font-size:22px}
+    p.lead{margin:0;color:var(--muted);font-size:14px}
+    .status{background:#fff;border:1px solid #e6eefc;padding:10px 14px;border-radius:999px;font-weight:600;color:var(--accent);font-size:13px}
+    main{display:grid;grid-template-columns:1fr;gap:18px}
+    .card{background:var(--card);border-radius:var(--radius);padding:var(--pad);box-shadow:0 8px 20px rgba(12,18,28,0.04)}
+    .two{display:grid;grid-template-columns:1fr 340px;gap:18px}
+    .muted{color:var(--muted);font-size:14px}
     ul.clean{padding:0;margin:0;list-style:none}
-    ul.clean li{padding:8px 0;border-bottom:1px solid #f1f3f6}
+    ul.clean li{padding:8px 0;border-bottom:1px solid #f1f5f9}
     .btn{display:inline-block;background:var(--accent);color:#fff;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:600}
     .link{color:var(--accent);text-decoration:none}
-    aside .card{padding:16px}
-    .contact-row{display:flex;flex-direction:column;gap:6px}
-    .label{font-weight:700;color:#233446;font-size:13px}
-    footer{margin-top:24px;color:var(--muted);font-size:13px;text-align:center}
-    @media(max-width:920px){main{grid-template-columns:1fr};header{flex-direction:column;align-items:flex-start}.status{width:100%}}
+    footer{margin-top:18px;color:var(--muted);font-size:13px;text-align:center}
+    .contact-list{display:flex;flex-direction:column;gap:6px}
+    @media(max-width:880px){.two{grid-template-columns:1fr}.title{flex-direction:row}}
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <div class="nameblock">
-        <div class="badge">ML</div>
+      <div class="title">
+        <div class="avatar" aria-hidden="true">ML</div>
         <div>
           <h1>Malik Lomax</h1>
-          <p class="lead">Logistics Operations • Inventory Control • Data & SQL-focused systems</p>
+          <p class="lead">Logistics Operations | Inventory Control & Shipment Accuracy | SQL & Data Systems</p>
         </div>
       </div>
-      <div class="status" aria-hidden="false">Pursuing B.S., IT & Data Management (Strayer University) — Seeking Logistics Operations / Data Analysis roles • Beaver County / Pittsburgh</div>
+      <div class="status" aria-hidden="false">
+        B.S. candidate — IT & Data Management (Strayer University) • Seeking Logistics Ops / Data Analysis roles — Beaver County / Pittsburgh
+      </div>
     </header>
 
     <main>
-      <section>
-        <div class="card">
-          <h2 style="margin-top:0;margin-bottom:8px">Professional Summary</h2>
-          <p class="muted" style="margin:0 0 12px 0">Operations leader with 20 years in high-volume logistics (FedEx, Amazon). I apply process discipline and data-driven methods to prevent system-to-floor discrepancies, improve shipment accuracy, and sustain operational reliability. First Class certified in Amazon Skill Builder & Educate. AWS Certified Cloud Practitioner. Focused on SQL and database administration as I complete my B.S. in IT & Data Management.</p>
+      <section class="card">
+        <h2 style="margin-top:0;margin-bottom:8px">Professional Summary</h2>
+        <p class="muted" style="margin:0 0 10px 0">
+          Results-driven logistics professional with 20 years managing high-volume warehouse and fulfillment operations. Strategic operator who applies data analysis and systems knowledge to prevent system-to-floor discrepancies, improve shipment accuracy, and reduce operational costs. First Class certified in Amazon Skill Builder & Educate. AWS Certified Cloud Practitioner. Currently completing a B.S. in IT & Data Management with a focus on SQL and Database Administration.
+        </p>
 
-          <h3 style="margin:12px 0 8px 0">Experience highlights</h3>
-          <ul class="clean">
-            <li><strong>High-volume fulfillment:</strong> Operational leadership in parcel and warehouse environments with an emphasis on accuracy and throughput.</li>
-            <li><strong>Data alignment:</strong> Built SQL-based audit workflows and operational reports to surface discrepancies and guide corrective action.</li>
-            <li><strong>SOP & process:</strong> Standard operating procedures, capacity planning, and cross-functional coordination to reduce errors.</li>
-            <li><strong>Certifications:</strong> AWS Certified Cloud Practitioner; AWS Educate participant; Amazon Skill Builder & Educate — First Class.</li>
-          </ul>
+        <div class="two" style="margin-top:14px">
+          <div>
+            <h3 style="margin:8px 0">Experience Highlights</h3>
+            <ul class="clean">
+              <li><strong>High-volume fulfillment:</strong> Operational leadership in parcel and warehouse environments; metrics-driven performance improvements.</li>
+              <li><strong>Inventory integrity:</strong> Cycle count accuracy, discrepancy detection and reconciliation workflows.</li>
+              <li><strong>Data & systems:</strong> SQL-based audit tools, ERP/WMS data mapping, and operational reporting.</li>
+              <li><strong>Process & safety:</strong> SOP development, capacity planning, and continuous improvement initiatives.</li>
+            </ul>
 
-          <h3 style="margin:14px 0 8px 0">Target roles</h3>
-          <ul class="clean">
-            <li>Logistics Operations Coordinator / Supervisor</li>
-            <li>Fulfillment Operations Analyst</li>
-            <li>Data Analyst — Supply Chain / Logistics</li>
-          </ul>
+            <h3 style="margin:16px 0 8px 0">Target Roles</h3>
+            <ul class="clean">
+              <li>Logistics Operations Coordinator / Supervisor</li>
+              <li>Fulfillment Operations Analyst</li>
+              <li>Data Analyst — Supply Chain / Logistics</li>
+            </ul>
 
-          <p style="margin-top:14px">Download professional summary: <a class="btn" href="Malik_Lomax_Professional_Summary.csv" download>Download CSV</a></p>
-        </div>
+            <p style="margin-top:14px">Download professional summary: <a class="btn" href="Malik_Lomax_Professional_Summary.csv" download>Download CSV</a></p>
+            <p style="margin-top:8px">View full portfolio: <a class="btn" href="https://maliklomax.me" target="_blank" rel="noopener">Visit maliklomax.me</a></p>
+          </div>
 
-        <div class="card" style="margin-top:18px">
-          <h3 style="margin-top:0">How I add value</h3>
-          <ul class="clean">
-            <li><strong>Operational credibility:</strong> Two decades of frontline and supervisory experience in high-volume warehouses.</li>
-            <li><strong>Data lens:</strong> Translate operational KPIs into SQL queries and dashboards for forecasting and staffing.</li>
-            <li><strong>Cross-team delivery:</strong> Coordinate operations, safety, and IT to implement practical automation and reporting.</li>
-          </ul>
+          <aside>
+            <div class="card" id="contact" aria-label="Contact and credentials">
+              <h4 style="margin:6px 0">Professional Credentials</h4>
+              <p class="muted" style="margin:6px 0 10px 0">Verified Strayer University badges and academic records</p>
+              <p><a class="link" href="https://strayer.badges.parchment.com/my-badges/organization" target="_blank" rel="noopener">Strayer University — badges (verified)</a></p>
+
+              <hr style="margin:10px 0;border:none;border-top:1px solid #eef2f8">
+
+              <h4 style="margin:6px 0">Certifications & Focus</h4>
+              <ul class="clean" style="margin-top:8px">
+                <li><strong>AWS Certified Cloud Practitioner</strong></li>
+                <li>AWS Educate — active participant</li>
+                <li>Amazon Skill Builder & Educate — First Class certified</li>
+                <li>Focus: SQL / Database Administration</li>
+              </ul>
+
+              <hr style="margin:10px 0;border:none;border-top:1px solid #eef2f8">
+
+              <h4 style="margin:6px 0">Contact</h4>
+              <div class="contact-list">
+                <div class="muted"><strong>Location:</strong> Beaver County / Pittsburgh, PA</div>
+                <div class="muted"><strong>Email:</strong> <a class="link" href="mailto:maliklomax261@gmail.com">maliklomax261@gmail.com</a></div>
+                <div class="muted"><strong>Portfolio:</strong> <a class="link" href="https://maliklomax.me" target="_blank" rel="noopener">maliklomax.me</a></div>
+                <div class="muted"><strong>LinkedIn:</strong> <a class="link" href="https://www.linkedin.com/in/maliklomax/?skipRedirect=true" target="_blank" rel="noopener">linkedin.com/in/maliklomax</a></div>
+              </div>
+
+              <p style="margin-top:12px"><a class="btn" href="Malik_Lomax_Professional_Summary.csv" download>Download Summary</a></p>
+            </div>
+          </aside>
         </div>
       </section>
 
-      <aside>
-        <div class="card" id="contact" aria-label="Contact and credentials">
-          <h4 style="margin:6px 0">Contact & Credentials</h4>
-          <div class="contact-row">
-            <div><span class="label">Location</span><div class="muted">Beaver County / Pittsburgh, PA</div></div>
-            <div><span class="label">Email</span><div class="muted">maliklomax261@gmail.com</div></div>
-            <div><span class="label">Portfolio</span><div><a class="link" href="https://maliklomax.me" target="_blank" rel="noopener">maliklomax.me</a></div></div>
-            <div><span class="label">LinkedIn</span><div><a class="link" href="https://www.linkedin.com/in/maliklomax/?skipRedirect=true" target="_blank" rel="noopener">linkedin.com/in/maliklomax</a></div></div>
-          </div>
-          <hr style="margin:12px 0;border:none;border-top:1px solid #eef1f4">
-          <h4 style="margin:8px 0">Certifications & focus</h4>
-          <ul class="clean" style="margin-top:6px">
-            <li><strong>AWS Certified Cloud Practitioner</strong></li>
-            <li>AWS Educate — active participant</li>
-            <li>Amazon Skill Builder & Educate — First Class</li>
-            <li>Focus: SQL / Database Administration</li>
-          </ul>
-          <p style="margin-top:12px"><a class="btn" href="Malik_Lomax_Professional_Summary.csv" download>Download Summary</a></p>
-        </div>
-      </aside>
+      <section class="card">
+        <h3 style="margin-top:0">Education</h3>
+        <p class="muted" style="margin:0 0 6px 0"><strong>Strayer University</strong> — B.S., IT & Data Management (in progress), GPA 3.5</p>
+        <p class="muted" style="margin:8px 0 0 0"><strong>Professional development</strong>: Amazon Skill Builder & Educate (First Class certified); AWS Educate participation.</p>
+      </section>
+
+      <section class="card">
+        <h3 style="margin-top:0">How I add value</h3>
+        <ul class="clean" style="margin-top:8px">
+          <li><strong>Operational credibility:</strong> 20 years of frontline and supervisory experience in high-volume warehouses.</li>
+          <li><strong>Data lens:</strong> Translate operational KPIs to SQL queries and dashboards for forecasting and staffing.</li>
+          <li><strong>Cross-team delivery:</strong> Coordinate operations, safety, and IT to implement practical automation and reporting.</li>
+        </ul>
+      </section>
     </main>
 
     <footer>
