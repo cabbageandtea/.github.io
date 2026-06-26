@@ -123,6 +123,10 @@
   margin-top: 1.25rem;
 }
 
+.card-grid--two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .info-card {
   background: var(--white);
   border: 1px solid var(--line);
@@ -214,7 +218,8 @@
 }
 
 @media (max-width: 720px) {
-  .card-grid { grid-template-columns: 1fr; }
+  .card-grid,
+  .card-grid--two { grid-template-columns: 1fr; }
   .highlight-grid { grid-template-columns: 1fr; }
   .action-row { flex-direction: column; }
   .action-row .btn { justify-content: center; }
