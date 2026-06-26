@@ -1,394 +1,263 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Malik Lomax | Logistics Operations &amp; Data Systems</title>
-  <meta name="description" content="Operations leader with 20+ years in high-volume logistics. Bridging warehouse operations and data-driven management." />
-  <meta name="robots" content="index, follow" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
-  <style>
-    /* ── TOKENS ─────────────────────────────────────────── */
-    :root {
-      --bg:              #0d0f14;
-      --surface:         #13161d;
-      --surface-2:       #191c24;
-      --surface-offset:  #1e2230;
-      --border:          rgba(255,255,255,0.07);
-      --border-strong:   rgba(255,255,255,0.12);
-      --text:            #e8eaf0;
-      --text-muted:      #7a8099;
-      --text-faint:      #3d4258;
-      --accent:          #4f98a3;
-      --accent-hover:    #5eb5c2;
-      --accent-glow:     rgba(79,152,163,0.15);
-      --font-display:    'Instrument Serif', Georgia, serif;
-      --font-body:       'Inter', system-ui, sans-serif;
-      --radius-sm:       6px;
-      --radius-md:       10px;
-      --radius-lg:       16px;
-      --shadow-card:     0 1px 3px rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.25);
-      --transition:      180ms cubic-bezier(0.16,1,0.3,1);
-      --max-w:           760px;
-    }
-
-    /* ── RESET ──────────────────────────────────────────── */
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth;font-size:16px}
-    body{
-      background:var(--bg);
-      color:var(--text);
-      font-family:var(--font-body);
-      line-height:1.65;
-      min-height:100dvh;
-      padding: 0 20px 80px;
-    }
-    img,svg{display:block}
-    a{color:var(--accent);text-decoration:none;transition:color var(--transition)}
-    a:hover{color:var(--accent-hover)}
-    button{cursor:pointer;font:inherit;border:none;background:none}
-
-    /* ── LAYOUT ─────────────────────────────────────────── */
-    .wrap{max-width:var(--max-w);margin:0 auto}
-
-    /* ── NAV ────────────────────────────────────────────── */
-    nav{
-      position:sticky;top:0;z-index:50;
-      background:rgba(13,15,20,0.85);
-      backdrop-filter:blur(12px);
-      -webkit-backdrop-filter:blur(12px);
-      border-bottom:1px solid var(--border);
-      padding:14px 20px;
-    }
-    .nav-inner{
-      max-width:var(--max-w);margin:0 auto;
-      display:flex;align-items:center;justify-content:space-between;gap:16px;
-    }
-    .nav-logo{
-      font-family:var(--font-display);
-      font-size:1.15rem;
-      color:var(--text);
-      letter-spacing:0.01em;
-      white-space:nowrap;
-    }
-    .nav-links{display:flex;align-items:center;gap:4px}
-    .nav-links a{
-      color:var(--text-muted);
-      font-size:0.875rem;
-      font-weight:500;
-      padding:6px 12px;
-      border-radius:var(--radius-sm);
-      transition:color var(--transition),background var(--transition);
-    }
-    .nav-links a:hover{color:var(--text);background:var(--surface-offset)}
-    .nav-links a.cta{
-      background:var(--accent);
-      color:#0d0f14;
-      font-weight:600;
-      padding:7px 16px;
-    }
-    .nav-links a.cta:hover{background:var(--accent-hover);color:#0d0f14}
-
-    /* ── HERO ───────────────────────────────────────────── */
-    .hero{
-      padding:72px 0 56px;
-      border-bottom:1px solid var(--border);
-    }
-    .hero-eyebrow{
-      font-size:0.75rem;
-      font-weight:600;
-      letter-spacing:0.12em;
-      text-transform:uppercase;
-      color:var(--accent);
-      margin-bottom:18px;
-    }
-    .hero h1{
-      font-family:var(--font-display);
-      font-size:clamp(2.4rem,5vw,3.8rem);
-      line-height:1.1;
-      color:var(--text);
-      font-weight:400;
-      font-style:italic;
-      letter-spacing:-0.01em;
-      margin-bottom:20px;
-    }
-    .hero-summary{
-      font-size:1.05rem;
-      color:var(--text-muted);
-      max-width:58ch;
-      line-height:1.7;
-      margin-bottom:32px;
-    }
-    .hero-summary strong{color:var(--text);font-weight:500}
-    .hero-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-    .btn-primary{
-      display:inline-flex;align-items:center;gap:8px;
-      background:var(--accent);
-      color:#0d0f14;
-      font-weight:600;
-      font-size:0.875rem;
-      padding:10px 22px;
-      border-radius:var(--radius-sm);
-      transition:background var(--transition),transform var(--transition);
-    }
-    .btn-primary:hover{background:var(--accent-hover);color:#0d0f14;transform:translateY(-1px)}
-    .btn-ghost{
-      display:inline-flex;align-items:center;gap:8px;
-      color:var(--text-muted);
-      font-weight:500;
-      font-size:0.875rem;
-      padding:10px 20px;
-      border-radius:var(--radius-sm);
-      border:1px solid var(--border-strong);
-      transition:color var(--transition),border-color var(--transition),background var(--transition);
-    }
-    .btn-ghost:hover{color:var(--text);border-color:rgba(255,255,255,0.2);background:var(--surface)}
-    .btn-ghost svg,.btn-primary svg{width:15px;height:15px;flex-shrink:0}
-
-    /* ── SECTION GRID ───────────────────────────────────── */
-    .sections{
-      display:grid;
-      gap:16px;
-      padding-top:40px;
-    }
-    .card{
-      background:var(--surface);
-      border:1px solid var(--border);
-      border-radius:var(--radius-lg);
-      padding:28px 32px;
-      box-shadow:var(--shadow-card);
-      transition:border-color var(--transition);
-    }
-    .card:hover{border-color:var(--border-strong)}
-    .card-label{
-      font-size:0.7rem;
-      font-weight:700;
-      letter-spacing:0.14em;
-      text-transform:uppercase;
-      color:var(--text-faint);
-      margin-bottom:14px;
-    }
-    .card h2{
-      font-family:var(--font-display);
-      font-size:1.35rem;
-      font-weight:400;
-      color:var(--text);
-      margin-bottom:10px;
-      line-height:1.3;
-    }
-    .card p{
-      color:var(--text-muted);
-      font-size:0.925rem;
-      line-height:1.7;
-      max-width:66ch;
-    }
-    .card p strong{color:var(--text);font-weight:500}
-
-    /* ── TWO-COL CARDS ──────────────────────────────────── */
-    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    @media(max-width:540px){.two-col{grid-template-columns:1fr}}
-
-    /* ── SKILLS LIST ────────────────────────────────────── */
-    .skills-grid{
-      display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;
-    }
-    .skill-tag{
-      font-size:0.78rem;
-      font-weight:500;
-      color:var(--text-muted);
-      background:var(--surface-offset);
-      border:1px solid var(--border);
-      padding:4px 12px;
-      border-radius:var(--radius-sm);
-      letter-spacing:0.02em;
-    }
-
-    /* ── TIMELINE ───────────────────────────────────────── */
-    .timeline{list-style:none;margin-top:8px}
-    .timeline li{
-      position:relative;
-      padding:14px 0 14px 22px;
-      border-left:1px solid var(--border);
-    }
-    .timeline li::before{
-      content:'';
-      position:absolute;
-      left:-4px;top:20px;
-      width:7px;height:7px;
-      border-radius:50%;
-      background:var(--accent);
-      box-shadow:0 0 8px var(--accent-glow);
-    }
-    .timeline li:last-child{padding-bottom:0}
-    .tl-title{font-weight:600;font-size:0.9rem;color:var(--text)}
-    .tl-meta{font-size:0.78rem;color:var(--text-faint);margin-top:2px}
-    .tl-body{font-size:0.875rem;color:var(--text-muted);margin-top:6px;max-width:58ch;line-height:1.65}
-
-    /* ── CONTACT BAR ────────────────────────────────────── */
-    .contact-row{
-      display:flex;flex-wrap:wrap;align-items:center;gap:20px;
-      margin-top:6px;
-    }
-    .contact-link{
-      display:inline-flex;align-items:center;gap:7px;
-      color:var(--text-muted);
-      font-size:0.875rem;
-      font-weight:500;
-      transition:color var(--transition);
-    }
-    .contact-link:hover{color:var(--accent)}
-    .contact-link svg{width:15px;height:15px;flex-shrink:0;opacity:.7}
-
-    /* ── DIVIDER ────────────────────────────────────────── */
-    hr{border:none;border-top:1px solid var(--border);margin:0}
-
-    /* ── FOOTER ─────────────────────────────────────────── */
-    footer{
-      text-align:center;
-      padding-top:48px;
-      font-size:0.78rem;
-      color:var(--text-faint);
-    }
-
-    /* ── MOBILE ─────────────────────────────────────────── */
-    @media(max-width:600px){
-      nav{padding:12px 16px}
-      .hero{padding:48px 0 40px}
-      .card{padding:20px}
-      .nav-links a:not(.cta){display:none}
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Module 1: Inventory Integrity Audit</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px 30px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .section h3 {
+            color: #764ba2;
+            font-size: 1.3em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .section ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+        
+        .section ul li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .section ul li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .gist-container {
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+        
+        .gist-embed {
+            max-width: 100%;
+            margin: 20px 0;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            font-size: 1em;
+            font-weight: 600;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+        
+        .btn-secondary:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+        }
+        
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+        
+        footer {
+            background: #f5f5f5;
+            padding: 20px 30px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #ddd;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            
+            .content {
+                padding: 20px 15px;
+            }
+            
+            .button-group {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
-
-<!-- ── NAV ── -->
-<nav>
-  <div class="nav-inner">
-    <span class="nav-logo">Malik Lomax</span>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#contact">Contact</a>
-      <a href="Malik_Lomax_Resume.html" target="_blank" rel="noopener" class="cta">Download Resume</a>
-    </div>
-  </div>
-</nav>
-
-<!-- ── HERO ── -->
-<div class="wrap">
-  <section class="hero" id="about">
-    <p class="hero-eyebrow">Logistics Operations &amp; Data Systems</p>
-    <h1>Malik Lomax</h1>
-    <p class="hero-summary">
-      Operations leader with <strong>20+ years in high-volume logistics</strong> (Amazon / FedEx).
-      I bridge the gap between physical warehouse operations and data-driven supply-chain management —
-      applying SQL, cloud fundamentals, and process-improvement thinking to every workflow I touch.
-    </p>
-    <div class="hero-actions">
-      <a href="Malik_Lomax_Resume.html" target="_blank" rel="noopener" class="btn-primary">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Download Resume
-      </a>
-      <a href="https://www.linkedin.com/in/maliklomax" target="_blank" rel="noopener" class="btn-ghost">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        LinkedIn
-      </a>
-    </div>
-  </section>
-
-  <!-- ── CARDS ── -->
-  <div class="sections">
-
-    <!-- Professional Summary -->
-    <div class="card">
-      <p class="card-label">Professional Summary</p>
-      <p>
-        Twenty years running high-volume logistics floors at Amazon and FedEx builds a particular kind of judgment — you develop an instinct for where systems break down and what it costs.
-        I now combine that operational foundation with <strong>SQL-based audit tooling, AWS cloud knowledge, and data analytics</strong> to surface the discrepancies that cost companies money before they become write-offs.
-        Currently completing a <strong>B.S. in IT &amp; Data Management at Strayer University (GPA 3.5)</strong>, with a focus on database administration and reporting pipelines.
-      </p>
-    </div>
-
-    <!-- Experience Timeline -->
-    <div class="card" id="experience">
-      <p class="card-label">Experience</p>
-      <ul class="timeline">
-        <li>
-          <div class="tl-title">Logistics Operations &amp; Systems Specialist</div>
-          <div class="tl-meta">Freelance · Oct 2023 – Present</div>
-          <p class="tl-body">Developing SQL-based audit tools to identify inventory discrepancies between physical counts and system records. Building audit workflows that trace discrepancy origin, log corrections, and surface recurring issues for corrective action.</p>
-        </li>
-        <li>
-          <div class="tl-title">Logistics Operations Associate</div>
-          <div class="tl-meta">TrueBlue (Amazon / FedEx placements) · Mar 2016 – Dec 2023</div>
-          <p class="tl-body">Tracked incoming/outgoing shipments, verified counts against documentation on high-volume shifts. Identified and resolved physical-to-system discrepancies before downstream impact. Led investigations that prevented shipment errors and reduced rework.</p>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Skills + Credentials row -->
-    <div class="two-col">
-      <div class="card">
-        <p class="card-label">Technical Skills</p>
-        <div class="skills-grid">
-          <span class="skill-tag">SQL / SQLite</span>
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">AWS CLF-C02</span>
-          <span class="skill-tag">Data Reporting</span>
-          <span class="skill-tag">WMS / ERP</span>
-          <span class="skill-tag">Inventory Audit</span>
-          <span class="skill-tag">HTML / CSS</span>
-          <span class="skill-tag">Database Admin</span>
-          <span class="skill-tag">Supply Chain Ops</span>
+    <div class="container">
+        <header>
+            <h1>📦 Inventory Integrity Audit</h1>
+            <p>Portfolio Module 1: SQL JOINs & Database Automation</p>
+        </header>
+        
+        <div class="content">
+            <!-- Overview Section -->
+            <div class="section">
+                <h2>Project Overview</h2>
+                <p>A professional-grade SQL solution for tracking warehouse stock levels and discrepancies. This project demonstrates advanced database techniques including JOINs for data validation and triggers for automated audit trails.</p>
+            </div>
+            
+            <!-- Key Components -->
+            <div class="section">
+                <h2>Components</h2>
+                <h3>📋 Inventory Table</h3>
+                <p>System of record for part numbers and quantities with data integrity checks.</p>
+                
+                <h3>📝 Audit Table</h3>
+                <p>Captures physical counts to identify mismatches between system records and actual inventory.</p>
+                
+                <h3>⚙️ Automation</h3>
+                <p>Uses a Database Trigger to log every change automatically without manual intervention.</p>
+            </div>
+            
+            <!-- How It Works -->
+            <div class="section">
+                <h2>How It Works</h2>
+                <p>The system uses a JOIN to compare system records against manual counts, while the TRIGGER ensures an audit trail exists without requiring manual log entry. This is a foundational pattern for Database Administration (DBA).</p>
+                
+                <h3>Key Queries</h3>
+                <ul>
+                    <li><strong>Audit Report:</strong> Highlights items where system vs. actual counts don't match</li>
+                    <li><strong>Hot List:</strong> Identifies the Top 5 parts with the most frequent audit mismatches</li>
+                    <li><strong>Discrepancy Analysis:</strong> Calculates the variance between expected and physical quantities</li>
+                </ul>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="section">
+                <h2>View Full Code</h2>
+                <div class="button-group">
+                    <a href="https://gist.github.com/cabbageandtea/cd23ed9bf6418d8667dad1b96827343b" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                        🔗 View on GitHub Gist
+                    </a>
+                    <a href="https://gist.github.com/cabbageandtea/cd23ed9bf6418d8667dad1b96827343b/raw" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                        📥 Download Raw SQL
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Embedded Gist -->
+            <div class="section">
+                <h2>Code Preview</h2>
+                <script src="https://gist.github.com/cabbageandtea/cd23ed9bf6418d8667dad1b96827343b.js"></script>
+            </div>
+            
+            <!-- Technical Details -->
+            <div class="section">
+                <h2>Technical Highlights</h2>
+                <ul>
+                    <li><strong>SQL Joins:</strong> INNER JOIN for matching inventory records with audit logs</li>
+                    <li><strong>Data Validation:</strong> CHECK constraints to ensure data integrity</li>
+                    <li><strong>Aggregation:</strong> GROUP BY and ORDER BY for trend analysis</li>
+                    <li><strong>Scalability:</strong> Designed to handle large warehouse datasets</li>
+                </ul>
+            </div>
         </div>
-      </div>
-
-      <div class="card">
-        <p class="card-label">Credentials</p>
-        <ul class="timeline">
-          <li>
-            <div class="tl-title">AWS Certified Cloud Practitioner</div>
-            <div class="tl-meta">Amazon Web Services</div>
-          </li>
-          <li>
-            <div class="tl-title">B.S. IT &amp; Data Management</div>
-            <div class="tl-meta">Strayer University · In Progress · GPA 3.5</div>
-          </li>
-          <li>
-            <div class="tl-title">AWS Educate — First Class</div>
-            <div class="tl-meta">Amazon Skill Builder</div>
-          </li>
-        </ul>
-      </div>
+        
+        <footer>
+            <p>© 2026 Portfolio | <a href="https://github.com/cabbageandtea" style="color: #667eea; text-decoration: none;">@cabbageandtea</a></p>
+        </footer>
     </div>
-
-    <!-- Contact -->
-    <div class="card" id="contact">
-      <p class="card-label">Contact</p>
-      <div class="contact-row">
-        <a href="mailto:maliklomax261@gmail.com" class="contact-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
-          maliklomax261@gmail.com
-        </a>
-        <a href="https://www.linkedin.com/in/maliklomax" target="_blank" rel="noopener" class="contact-link">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          linkedin.com/in/maliklomax
-        </a>
-        <span class="contact-link" style="cursor:default;pointer-events:none;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Beaver Falls, PA
-        </span>
-      </div>
-    </div>
-
-  </div><!-- /sections -->
-
-  <footer>
-    <p>&copy; 2026 Malik Lomax · Beaver Falls, PA</p>
-  </footer>
-</div><!-- /wrap -->
-
 </body>
 </html>
