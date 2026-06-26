@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Inventory Integrity Audit &mdash; Malik Lomax</title>
-  <meta name="description" content="SQL portfolio project: inventory audit system with JOINs, triggers, and discrepancy analysis for warehouse operations." />
+  <title>Inventory Reconciliation Case Study &mdash; Malik Lomax</title>
+  <meta name="description" content="Case study: inventory reconciliation workflow for warehouse operations — audit trails, variance reporting, and WMS accuracy." />
   <link rel="canonical" href="https://maliklomax.me/portfolio-inventory-audit.html" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <meta name="theme-color" content="#0a0d12" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/subpage.css?v=3" />
+  <link rel="stylesheet" href="css/subpage.css?v=4" />
 </head>
 <body>
 
@@ -21,20 +21,20 @@
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
         Back to portfolio
       </a>
-      <span class="sub-tag">Module 01 &middot; SQL &amp; DBA</span>
+      <span class="sub-tag">Case Study &middot; Reconciliation</span>
     </div>
   </div>
 
   <header class="sub-hero">
     <div class="wrap sub-hero-content">
       <h1>Inventory Integrity Audit</h1>
-      <p>A professional-grade SQL solution for tracking warehouse stock levels and discrepancies &mdash; JOINs for validation, triggers for automated audit trails, and queries built for real reconciliation workflows.</p>
+      <p>A reconciliation workflow built from 20 years of floor experience &mdash; comparing system-on-hand to physical counts, logging every variance, and producing shift-level reports coordinators can act on.</p>
       <div class="pill-row">
-        <span class="pill">SQL</span>
-        <span class="pill">INNER JOIN</span>
-        <span class="pill">Triggers</span>
-        <span class="pill">CHECK Constraints</span>
-        <span class="pill">GROUP BY</span>
+        <span class="pill">Reconciliation</span>
+        <span class="pill">Audit Trails</span>
+        <span class="pill">Variance Reports</span>
+        <span class="pill">WMS Accuracy</span>
+        <span class="pill">Root-Cause Tracking</span>
       </div>
     </div>
   </header>
@@ -42,60 +42,50 @@
   <main class="wrap sub-main">
 
     <section class="sub-section">
-      <h2>Project overview</h2>
-      <p>Born from 20 years of watching physical counts disagree with WMS records, this project models the exact pattern operations teams need: a system-of-record table, a physical audit log, automated change tracking, and reporting queries that surface variance before it becomes a shipment error.</p>
+      <h2>The problem</h2>
+      <p>On a high-volume floor, the cost of a WMS mismatch is not abstract. A mislabel, a short shipment, or a receiving error that makes it into the system unchecked becomes a pick error, a failed audit, or a customer complaint two shifts later. This workflow addresses that gap directly.</p>
     </section>
 
     <section class="sub-section">
-      <h2>Architecture</h2>
+      <h2>What it does</h2>
       <div class="card-grid">
         <article class="info-card">
-          <h3>Inventory table</h3>
-          <p>System of record for part numbers and quantities with CHECK constraints enforcing data integrity at insert time.</p>
+          <h3>Compare</h3>
+          <p>Matches system inventory records against physical counts to surface SKUs where on-hand does not match what is actually on the shelf or in staging.</p>
         </article>
         <article class="info-card">
-          <h3>Audit table</h3>
-          <p>Captures physical counts to identify mismatches between system records and what is actually on the shelf.</p>
+          <h3>Log</h3>
+          <p>Every inventory change is captured automatically &mdash; no manual audit entry, no gaps when shifts turn over or supervisors change.</p>
         </article>
         <article class="info-card">
-          <h3>Trigger automation</h3>
-          <p>Logs every inventory change automatically &mdash; no manual audit entry, no gaps in the trail when shifts turn over.</p>
+          <h3>Report</h3>
+          <p>Produces variance reports and hot lists showing which parts generate the most repeat mismatches, by shift and zone.</p>
         </article>
       </div>
     </section>
 
     <section class="sub-section">
-      <h2>Key queries</h2>
-      <p>The system uses a JOIN to compare system records against manual counts, while the trigger ensures an audit trail exists without requiring manual log entry.</p>
+      <h2>Operational outcomes</h2>
       <ul class="bullet-list">
-        <li><strong>Audit report</strong> &mdash; highlights items where system vs. actual counts don&rsquo;t match</li>
-        <li><strong>Hot list</strong> &mdash; identifies the top 5 parts with the most frequent audit mismatches</li>
-        <li><strong>Discrepancy analysis</strong> &mdash; calculates variance between expected and physical quantities</li>
+        <li><strong>Faster reconciliation</strong> &mdash; reduces manual count-vs-system comparison time during shift close-out</li>
+        <li><strong>Repeat pattern detection</strong> &mdash; identifies SKUs and zones driving recurring discrepancies</li>
+        <li><strong>Audit trail integrity</strong> &mdash; every change logged without relying on floor staff to remember to enter it</li>
+        <li><strong>Supervisor-ready reports</strong> &mdash; output formatted for corrective action during handoff, not after the fact</li>
       </ul>
     </section>
 
     <section class="sub-section">
-      <h2>View full code</h2>
-      <div class="action-row">
-        <a href="https://gist.github.com/cabbageandtea/cd23ed9bf6418d8667dad1b96827343b" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View on GitHub Gist</a>
-        <a href="https://gist.github.com/cabbageandtea/cd23ed9bf6418d8667dad1b96827343b/raw" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Download raw SQL</a>
-      </div>
+      <h2>Why this matters for logistics coordination</h2>
+      <p>This is not a coding exercise. It is a demonstration of how I translate warehouse operational data into actionable reports using SQL and cloud platforms &mdash; the same skill set a Logistics Operations Coordinator needs when mislabels, shorts, and reconciliation errors are the daily reality on the floor.</p>
     </section>
 
     <section class="sub-section">
-      <h2>Code preview</h2>
-      <div class="gist-wrap">
-        <script src="https://gist.github.com/cabbageandtea/cd23ed9bf6418d8667dad1b96827343b.js"></script>
-      </div>
-    </section>
-
-    <section class="sub-section">
-      <h2>Technical highlights</h2>
+      <h2>Technical approach (summary)</h2>
       <div class="highlight-grid">
-        <div class="highlight-item"><strong>SQL joins</strong> INNER JOIN for matching inventory records with audit logs</div>
-        <div class="highlight-item"><strong>Data validation</strong> CHECK constraints to ensure data integrity</div>
-        <div class="highlight-item"><strong>Aggregation</strong> GROUP BY and ORDER BY for trend analysis</div>
-        <div class="highlight-item"><strong>Scalability</strong> Designed to handle large warehouse datasets</div>
+        <div class="highlight-item"><strong>Data matching</strong> System records joined to physical audit counts for variance detection</div>
+        <div class="highlight-item"><strong>Integrity checks</strong> Constraints enforce valid data at entry — bad records caught before they propagate</div>
+        <div class="highlight-item"><strong>Automated logging</strong> Changes tracked without manual intervention across shifts</div>
+        <div class="highlight-item"><strong>Trend analysis</strong> Top mismatch SKUs ranked for targeted corrective action</div>
       </div>
     </section>
 
@@ -103,10 +93,10 @@
 
   <footer class="site-footer">
     <div class="wrap site-footer-inner">
-      <p>&copy; 2026 Malik Lomax</p>
+      <p>&copy; 2026 Malik Lomax &middot; Logistics Operations Specialist</p>
       <div class="site-footer-links">
         <a href="/">Portfolio</a>
-        <a href="https://github.com/cabbageandtea" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="Malik_Lomax_Resume.html">Resume</a>
       </div>
     </div>
   </footer>
