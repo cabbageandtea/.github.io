@@ -1,71 +1,232 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Malik Lomax — Resume</title>
-  <meta name="description" content="Resume — Malik Lomax, Logistics Operations, Inventory Control, Data & SQL" />
+  <meta name="description" content="Resume — Malik Lomax, Logistics Operations & Data Systems" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-    body{font-family:Inter,system-ui,Segoe UI,Roboto,Arial;margin:24px;color:#0f1724}
-    .wrap{max-width:760px;margin:0 auto}
-    h1{margin:0;font-size:22px}
-    h2{font-size:16px;margin:12px 0 6px}
-    p.lead{color:#6b7280;margin:6px 0}
-    .section{margin-top:12px}
-    ul{margin:6px 0 0 18px}
-    .meta{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
-    .muted{color:#6b7280}
-    .contact{margin-top:10px}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{font-size:15px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    body{
+      font-family:'Inter',Helvetica,Arial,sans-serif;
+      color:#1a1d27;
+      background:#ffffff;
+      padding:40px 48px;
+      max-width:800px;
+      margin:0 auto;
+    }
+
+    /* ─ HEADER ────────────────────────────── */
+    .resume-header{
+      padding-bottom:20px;
+      margin-bottom:24px;
+      border-bottom:2px solid #1a1d27;
+    }
+    h1{font-size:1.85rem;font-weight:700;letter-spacing:-0.03em;color:#1a1d27}
+    .resume-title{
+      font-size:0.8rem;
+      font-weight:600;
+      letter-spacing:0.1em;
+      text-transform:uppercase;
+      color:#4f98a3;
+      margin-top:4px;
+    }
+    .contact-bar{
+      display:flex;flex-wrap:wrap;gap:8px 20px;
+      margin-top:12px;
+      font-size:0.78rem;
+      color:#4b5563;
+    }
+    .contact-bar a{color:#4f98a3;text-decoration:none}
+
+    /* ─ SECTION ────────────────────────────── */
+    section{margin-bottom:22px}
+    h2{
+      font-size:0.7rem;
+      font-weight:700;
+      letter-spacing:0.12em;
+      text-transform:uppercase;
+      color:#4f98a3;
+      border-bottom:1px solid #e5e7eb;
+      padding-bottom:5px;
+      margin-bottom:12px;
+    }
+    p{font-size:0.875rem;color:#374151;line-height:1.65;max-width:72ch}
+
+    /* ─ EXPERIENCE ───────────────────────── */
+    .job{margin-bottom:16px}
+    .job-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:baseline;
+      flex-wrap:wrap;
+      gap:4px;
+    }
+    .job-title{font-size:0.9rem;font-weight:600;color:#1a1d27}
+    .job-dates{font-size:0.78rem;color:#9ca3af;white-space:nowrap}
+    .job-org{font-size:0.8rem;color:#6b7280;margin-top:1px;margin-bottom:6px}
+    ul{list-style:none;padding:0}
+    ul li{
+      font-size:0.85rem;
+      color:#374151;
+      line-height:1.6;
+      padding-left:14px;
+      position:relative;
+      margin-bottom:4px;
+    }
+    ul li::before{
+      content:'–';
+      position:absolute;left:0;
+      color:#4f98a3;
+      font-weight:600;
+    }
+
+    /* ─ SKILLS ────────────────────────────── */
+    .skills-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+    .skill{
+      font-size:0.75rem;
+      font-weight:500;
+      background:#f3f4f6;
+      color:#374151;
+      padding:3px 10px;
+      border-radius:4px;
+    }
+
+    /* ─ TWO COLUMN ──────────────────────── */
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+
+    /* ─ PRINT ────────────────────────────── */
+    @media print{
+      body{padding:24px 32px}
+      .no-print{display:none!important}
+    }
+
+    /* ─ PRINT BUTTON ───────────────────── */
+    .print-bar{
+      display:flex;gap:10px;align-items:center;
+      margin-bottom:28px;
+    }
+    .btn-print{
+      display:inline-flex;align-items:center;gap:6px;
+      background:#4f98a3;color:#fff;
+      font-size:0.8rem;font-weight:600;
+      padding:8px 18px;border-radius:6px;
+      cursor:pointer;border:none;
+      font-family:inherit;
+      transition:background .15s;
+    }
+    .btn-print:hover{background:#3d8089}
+    .btn-back{
+      display:inline-flex;align-items:center;gap:6px;
+      color:#6b7280;font-size:0.8rem;font-weight:500;
+      padding:8px 16px;border-radius:6px;
+      border:1px solid #e5e7eb;
+      font-family:inherit;
+      cursor:pointer;background:none;
+      text-decoration:none;
+    }
+    .btn-back:hover{background:#f9fafb}
   </style>
 </head>
 <body>
-  <div class="wrap">
+
+  <div class="print-bar no-print">
+    <a href="/" class="btn-back">← Back to Portfolio</a>
+    <button class="btn-print" onclick="window.print()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+      Save as PDF (Ctrl+P)
+    </button>
+  </div>
+
+  <header class="resume-header">
     <h1>Malik Lomax</h1>
-    <div class="meta">
-      <div class="muted">Beaver County / Pittsburgh, PA</div>
-      <div class="muted">maliklomax261@gmail.com</div>
-      <div><a href="https://maliklomax.me">maliklomax.me</a></div>
-      <div><a href="https://www.linkedin.com/in/maliklomax/?skipRedirect=true">linkedin.com/in/maliklomax</a></div>
+    <div class="resume-title">Logistics Operations &amp; Data Systems</div>
+    <div class="contact-bar">
+      <span>Beaver Falls, PA</span>
+      <a href="mailto:maliklomax261@gmail.com">maliklomax261@gmail.com</a>
+      <a href="https://maliklomax.me" target="_blank" rel="noopener">maliklomax.me</a>
+      <a href="https://www.linkedin.com/in/maliklomax" target="_blank" rel="noopener">linkedin.com/in/maliklomax</a>
     </div>
+  </header>
 
-    <p class="lead">Operations leader with 20 years in high-volume logistics and warehouse operations. Skilled at preventing system-to-floor discrepancies, improving shipment accuracy, and applying SQL-driven audit and reporting workflows. AWS Certified Cloud Practitioner. Completing B.S. in IT & Data Management (Strayer University, GPA 3.5).</p>
+  <section>
+    <h2>Professional Summary</h2>
+    <p>Operations leader with 20+ years in high-volume logistics (Amazon / FedEx). I bridge the gap between physical warehouse operations and data-driven logistics management — applying SQL-based audit workflows, cloud fundamentals, and process-improvement thinking to reduce discrepancies and drive operational accuracy. AWS Certified Cloud Practitioner. Completing B.S. in IT &amp; Data Management at Strayer University (GPA 3.5).</p>
+  </section>
 
-    <div class="section">
-      <h2>Experience</h2>
-      <h3>Logistics Operations & Systems Specialist — Freelance (Oct 2023 – Present)</h3>
+  <section>
+    <h2>Experience</h2>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Logistics Operations &amp; Systems Specialist</span>
+        <span class="job-dates">Oct 2023 – Present</span>
+      </div>
+      <div class="job-org">Freelance · Beaver County, PA</div>
       <ul>
-        <li>Developed SQL-based audit tools to identify inventory discrepancies between physical counts and system records, reducing reconciliation time and improving visibility.</li>
+        <li>Developed SQL-based audit tools to identify inventory discrepancies between physical counts and WMS records, reducing reconciliation time and improving system accuracy.</li>
         <li>Built audit workflows that trace discrepancy origin, log corrections, and surface recurring issues for corrective action.</li>
         <li>Mapped ERP/WMS data flows to operational processes to ensure queries reflect real-world material movement and staging.</li>
+        <li>Designed reporting pipelines for supply chain data analysis using Python and SQLite.</li>
       </ul>
+    </div>
 
-      <h3>Logistics Operations Associate — TrueBlue (Mar 2016 – Dec 2023)</h3>
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Logistics Operations Associate</span>
+        <span class="job-dates">Mar 2016 – Dec 2023</span>
+      </div>
+      <div class="job-org">TrueBlue (Amazon / FedEx placements) · Beaver County, PA</div>
       <ul>
-        <li>Tracked incoming and outgoing shipments and verified counts/conditions against documentation for high-volume shifts.</li>
+        <li>Tracked incoming and outgoing shipments and verified counts/conditions against documentation for high-volume shifts across Amazon and FedEx facilities.</li>
         <li>Identified and resolved physical-to-system discrepancies (mislabels, short shipments, receiving errors) before they impacted downstream operations.</li>
-        <li>Served as a floor reference for inventory accuracy and led investigations that prevented shipment errors and reduced rework.</li>
+        <li>Served as floor reference for inventory accuracy and led investigations that prevented shipment errors and reduced rework.</li>
+        <li>Coordinated with team leads and supervisors to implement corrective procedures for recurring inventory discrepancy patterns.</li>
       </ul>
     </div>
+  </section>
 
-    <div class="section">
+  <div class="two-col">
+    <section>
       <h2>Education</h2>
-      <p class="muted"><strong>Strayer University</strong> — B.S., IT & Data Management (in progress), GPA 3.5</p>
-    </div>
+      <div class="job">
+        <div class="job-title" style="font-size:0.85rem">B.S., IT &amp; Data Management</div>
+        <div class="job-org">Strayer University · In Progress · GPA 3.5</div>
+        <p style="margin-top:4px;font-size:0.8rem;color:#6b7280">Coursework: Database Administration, Python, Cybersecurity, Web Development, Project Management</p>
+      </div>
+    </section>
 
-    <div class="section">
-      <h2>Certifications & Technical</h2>
+    <section>
+      <h2>Certifications</h2>
       <ul>
-        <li>AWS Certified Cloud Practitioner</li>
-        <li>AWS Educate — active participant</li>
-        <li>Amazon Skill Builder & Educate — First Class</li>
-        <li>Technical focus: SQL, Database Administration, Data Reporting</li>
+        <li>AWS Certified Cloud Practitioner (CLF-C02)</li>
+        <li>AWS Educate — First Class &middot; Amazon Skill Builder</li>
+        <li>Sophia Learning — IT &amp; Data coursework modules</li>
       </ul>
-    </div>
-
-    <div class="section">
-      <h2>Summary</h2>
-      <p class="muted">Available for Logistics Operations, Inventory Coordination, or Supply Chain Data Analysis roles in the Beaver County / Pittsburgh area. Metrics and project artifacts available on request or via portfolio.</p>
-    </div>
+    </section>
   </div>
+
+  <section>
+    <h2>Technical Skills</h2>
+    <div class="skills-row">
+      <span class="skill">SQL / SQLite</span>
+      <span class="skill">Python</span>
+      <span class="skill">AWS Cloud</span>
+      <span class="skill">Database Administration</span>
+      <span class="skill">Data Reporting</span>
+      <span class="skill">WMS / ERP Systems</span>
+      <span class="skill">Inventory Audit</span>
+      <span class="skill">Supply Chain Ops</span>
+      <span class="skill">HTML / CSS</span>
+      <span class="skill">Git / GitHub</span>
+      <span class="skill">Process Improvement</span>
+      <span class="skill">Microsoft Office</span>
+    </div>
+  </section>
+
 </body>
 </html>
