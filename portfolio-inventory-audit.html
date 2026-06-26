@@ -3,273 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Inventory Integrity Audit — Malik Lomax</title>
+  <title>Inventory Integrity Audit &mdash; Malik Lomax</title>
   <meta name="description" content="SQL portfolio project: inventory audit system with JOINs, triggers, and discrepancy analysis for warehouse operations." />
   <link rel="canonical" href="https://maliklomax.me/portfolio-inventory-audit.html" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <meta name="theme-color" content="#0e1117" />
+  <meta name="theme-color" content="#0a0d12" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --ink: #12151c;
-      --muted: #5c6478;
-      --line: rgba(18, 21, 28, 0.08);
-      --surface: #f7f6f3;
-      --white: #ffffff;
-      --accent: #3d8f9b;
-      --accent-bright: #4faeb9;
-      --accent-glow: rgba(61, 143, 155, 0.18);
-      --hero-bg: #0e1117;
-      --hero-muted: rgba(255, 255, 255, 0.62);
-      --radius: 14px;
-      --radius-sm: 8px;
-      --font: 'Plus Jakarta Sans', system-ui, sans-serif;
-      --serif: 'Instrument Serif', Georgia, serif;
-      --mono: 'JetBrains Mono', monospace;
-    }
-    body {
-      font-family: var(--font);
-      color: var(--ink);
-      background: var(--surface);
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-    }
-    a { color: inherit; text-decoration: none; }
-    .wrap { width: min(900px, calc(100% - 2.5rem)); margin-inline: auto; }
-
-    .top-bar {
-      padding: 1.25rem 0;
-      border-bottom: 1px solid var(--line);
-      background: rgba(247, 246, 243, 0.9);
-      backdrop-filter: blur(12px);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    .top-bar-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--muted);
-      transition: color 0.2s;
-    }
-    .back-link:hover { color: var(--accent); }
-    .module-tag {
-      font-family: var(--mono);
-      font-size: 0.68rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      background: var(--accent-glow);
-      padding: 0.35rem 0.7rem;
-      border-radius: 999px;
-    }
-
-    .hero {
-      background: var(--hero-bg);
-      color: var(--white);
-      padding: clamp(3rem, 8vw, 5rem) 0;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size: 48px 48px;
-      mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 20%, transparent 75%);
-    }
-    .hero-content { position: relative; }
-    .hero h1 {
-      font-family: var(--serif);
-      font-size: clamp(2.2rem, 5vw, 3.25rem);
-      font-weight: 400;
-      letter-spacing: -0.02em;
-      line-height: 1.1;
-      margin-bottom: 0.75rem;
-    }
-    .hero p {
-      color: var(--hero-muted);
-      font-size: 1.05rem;
-      max-width: 54ch;
-      margin-bottom: 1.75rem;
-    }
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-    .pill {
-      font-family: var(--mono);
-      font-size: 0.68rem;
-      padding: 0.35rem 0.65rem;
-      border-radius: 4px;
-      background: rgba(255,255,255,0.07);
-      color: rgba(255,255,255,0.75);
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    main { padding: clamp(2.5rem, 6vw, 4rem) 0 4rem; }
-
-    .section { margin-bottom: 2.75rem; }
-    .section h2 {
-      font-family: var(--serif);
-      font-size: 1.5rem;
-      font-weight: 400;
-      margin-bottom: 0.85rem;
-      letter-spacing: -0.02em;
-    }
-    .section > p, .section li {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-    .section > p { margin-bottom: 1rem; max-width: 65ch; }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      margin-top: 1.25rem;
-    }
-    .card {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 1.25rem;
-    }
-    .card h3 {
-      font-size: 0.9rem;
-      font-weight: 700;
-      margin-bottom: 0.4rem;
-      color: var(--accent);
-    }
-    .card p { font-size: 0.85rem; color: var(--muted); line-height: 1.55; }
-
-    .query-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.65rem;
-      margin-top: 0.75rem;
-    }
-    .query-list li {
-      padding-left: 1rem;
-      position: relative;
-      line-height: 1.55;
-    }
-    .query-list li::before {
-      content: '—';
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-weight: 700;
-    }
-    .query-list strong { color: var(--ink); }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin: 1.5rem 0;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      padding: 0.8rem 1.35rem;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      font-family: inherit;
-      transition: transform 0.2s, background 0.2s;
-    }
-    .btn:hover { transform: translateY(-1px); }
-    .btn-primary {
-      background: var(--accent);
-      color: var(--white);
-    }
-    .btn-primary:hover { background: var(--accent-bright); }
-    .btn-secondary {
-      background: var(--white);
-      color: var(--ink);
-      border: 1px solid var(--line);
-    }
-    .btn-secondary:hover { background: #fafafa; }
-
-    .gist-wrap {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 1.25rem;
-      overflow: hidden;
-    }
-
-    .highlights {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.75rem;
-      margin-top: 0.75rem;
-    }
-    .highlight {
-      font-size: 0.85rem;
-      color: var(--muted);
-      padding: 0.85rem 1rem;
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-sm);
-      line-height: 1.5;
-    }
-    .highlight strong { color: var(--ink); display: block; margin-bottom: 0.15rem; font-size: 0.8rem; }
-
-    footer {
-      border-top: 1px solid var(--line);
-      padding: 1.5rem 0 2rem;
-      text-align: center;
-      font-size: 0.78rem;
-      color: var(--muted);
-    }
-    footer a { color: var(--accent); }
-
-    @media (max-width: 720px) {
-      .cards { grid-template-columns: 1fr; }
-      .highlights { grid-template-columns: 1fr; }
-      .actions { flex-direction: column; }
-      .btn { justify-content: center; }
-    }
-  </style>
+  <link rel="stylesheet" href="css/subpage.css?v=3" />
 </head>
 <body>
 
-  <div class="top-bar">
-    <div class="wrap top-bar-inner">
-      <a href="/" class="back-link">
+  <div class="sub-top">
+    <div class="wrap sub-top-inner">
+      <a href="/" class="sub-back">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
         Back to portfolio
       </a>
-      <span class="module-tag">Module 01 · SQL &amp; DBA</span>
+      <span class="sub-tag">Module 01 &middot; SQL &amp; DBA</span>
     </div>
   </div>
 
-  <header class="hero">
-    <div class="wrap hero-content">
+  <header class="sub-hero">
+    <div class="wrap sub-hero-content">
       <h1>Inventory Integrity Audit</h1>
-      <p>A professional-grade SQL solution for tracking warehouse stock levels and discrepancies — JOINs for validation, triggers for automated audit trails, and queries built for real reconciliation workflows.</p>
-      <div class="hero-meta">
+      <p>A professional-grade SQL solution for tracking warehouse stock levels and discrepancies &mdash; JOINs for validation, triggers for automated audit trails, and queries built for real reconciliation workflows.</p>
+      <div class="pill-row">
         <span class="pill">SQL</span>
         <span class="pill">INNER JOIN</span>
         <span class="pill">Triggers</span>
@@ -279,78 +39,75 @@
     </div>
   </header>
 
-  <main class="wrap">
+  <main class="wrap sub-main">
 
-    <section class="section">
+    <section class="sub-section">
       <h2>Project overview</h2>
-      <p>
-        Born from 20 years of watching physical counts disagree with WMS records, this project models the exact pattern operations teams need: a system-of-record table, a physical audit log, automated change tracking, and reporting queries that surface variance before it becomes a shipment error.
-      </p>
+      <p>Born from 20 years of watching physical counts disagree with WMS records, this project models the exact pattern operations teams need: a system-of-record table, a physical audit log, automated change tracking, and reporting queries that surface variance before it becomes a shipment error.</p>
     </section>
 
-    <section class="section">
+    <section class="sub-section">
       <h2>Architecture</h2>
-      <div class="cards">
-        <article class="card">
+      <div class="card-grid">
+        <article class="info-card">
           <h3>Inventory table</h3>
           <p>System of record for part numbers and quantities with CHECK constraints enforcing data integrity at insert time.</p>
         </article>
-        <article class="card">
+        <article class="info-card">
           <h3>Audit table</h3>
           <p>Captures physical counts to identify mismatches between system records and what is actually on the shelf.</p>
         </article>
-        <article class="card">
+        <article class="info-card">
           <h3>Trigger automation</h3>
-          <p>Logs every inventory change automatically — no manual audit entry, no gaps in the trail when shifts turn over.</p>
+          <p>Logs every inventory change automatically &mdash; no manual audit entry, no gaps in the trail when shifts turn over.</p>
         </article>
       </div>
     </section>
 
-    <section class="section">
+    <section class="sub-section">
       <h2>Key queries</h2>
       <p>The system uses a JOIN to compare system records against manual counts, while the trigger ensures an audit trail exists without requiring manual log entry.</p>
-      <ul class="query-list">
-        <li><strong>Audit report</strong> — highlights items where system vs. actual counts don't match</li>
-        <li><strong>Hot list</strong> — identifies the top 5 parts with the most frequent audit mismatches</li>
-        <li><strong>Discrepancy analysis</strong> — calculates variance between expected and physical quantities</li>
+      <ul class="bullet-list">
+        <li><strong>Audit report</strong> &mdash; highlights items where system vs. actual counts don&rsquo;t match</li>
+        <li><strong>Hot list</strong> &mdash; identifies the top 5 parts with the most frequent audit mismatches</li>
+        <li><strong>Discrepancy analysis</strong> &mdash; calculates variance between expected and physical quantities</li>
       </ul>
     </section>
 
-    <section class="section">
+    <section class="sub-section">
       <h2>View full code</h2>
-      <div class="actions">
-        <a href="https://gist.github.com/cabbageandtea/cd23ed9bf6418d8667dad1b96827343b" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-          View on GitHub Gist
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></svg>
-        </a>
-        <a href="https://gist.github.com/cabbageandtea/cd23ed9bf6418d8667dad1b96827343b/raw" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
-          Download raw SQL
-        </a>
+      <div class="action-row">
+        <a href="https://gist.github.com/cabbageandtea/cd23ed9bf6418d8667dad1b96827343b" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View on GitHub Gist</a>
+        <a href="https://gist.github.com/cabbageandtea/cd23ed9bf6418d8667dad1b96827343b/raw" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Download raw SQL</a>
       </div>
     </section>
 
-    <section class="section">
+    <section class="sub-section">
       <h2>Code preview</h2>
       <div class="gist-wrap">
         <script src="https://gist.github.com/cabbageandtea/cd23ed9bf6418d8667dad1b96827343b.js"></script>
       </div>
     </section>
 
-    <section class="section">
+    <section class="sub-section">
       <h2>Technical highlights</h2>
-      <div class="highlights">
-        <div class="highlight"><strong>SQL joins</strong> INNER JOIN for matching inventory records with audit logs</div>
-        <div class="highlight"><strong>Data validation</strong> CHECK constraints to ensure data integrity</div>
-        <div class="highlight"><strong>Aggregation</strong> GROUP BY and ORDER BY for trend analysis</div>
-        <div class="highlight"><strong>Scalability</strong> Designed to handle large warehouse datasets</div>
+      <div class="highlight-grid">
+        <div class="highlight-item"><strong>SQL joins</strong> INNER JOIN for matching inventory records with audit logs</div>
+        <div class="highlight-item"><strong>Data validation</strong> CHECK constraints to ensure data integrity</div>
+        <div class="highlight-item"><strong>Aggregation</strong> GROUP BY and ORDER BY for trend analysis</div>
+        <div class="highlight-item"><strong>Scalability</strong> Designed to handle large warehouse datasets</div>
       </div>
     </section>
 
   </main>
 
-  <footer>
-    <div class="wrap">
-      <p>© 2026 Malik Lomax · <a href="/">Portfolio</a> · <a href="https://github.com/cabbageandtea" target="_blank" rel="noopener noreferrer">@cabbageandtea</a></p>
+  <footer class="site-footer">
+    <div class="wrap site-footer-inner">
+      <p>&copy; 2026 Malik Lomax</p>
+      <div class="site-footer-links">
+        <a href="/">Portfolio</a>
+        <a href="https://github.com/cabbageandtea" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
     </div>
   </footer>
 
