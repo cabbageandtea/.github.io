@@ -1,70 +1,394 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Malik Lomax | Logistics & Data Analytics</title>
-    <style>
-        :root {
-            --bg: #0f172a;
-            --card: #1e293b;
-            --text-main: #f8fafc;
-            --text-dim: #94a3b8;
-            --accent: #38bdf8;
-            --border: #334155;
-        }
-        body {
-            background-color: var(--bg);
-            color: var(--text-main);
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 40px 20px;
-        }
-        .container { max-width: 800px; margin: 0 auto; }
-        header { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 40px; }
-        h1 { margin: 0; font-size: 2.5rem; letter-spacing: -0.05em; }
-        .tagline { color: var(--accent); font-weight: 600; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 0.1em; }
-        
-        .card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            padding: 30px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-        }
-        h2 { font-size: 1.25rem; color: var(--accent); margin-top: 0; }
-        
-        a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: 0.3s; }
-        a:hover { border-bottom: 1px solid var(--accent); }
-        
-        @media (max-width: 600px) { body { padding: 20px; } }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Malik Lomax | Logistics Operations &amp; Data Systems</title>
+  <meta name="description" content="Operations leader with 20+ years in high-volume logistics. Bridging warehouse operations and data-driven management." />
+  <meta name="robots" content="index, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    /* ── TOKENS ─────────────────────────────────────────── */
+    :root {
+      --bg:              #0d0f14;
+      --surface:         #13161d;
+      --surface-2:       #191c24;
+      --surface-offset:  #1e2230;
+      --border:          rgba(255,255,255,0.07);
+      --border-strong:   rgba(255,255,255,0.12);
+      --text:            #e8eaf0;
+      --text-muted:      #7a8099;
+      --text-faint:      #3d4258;
+      --accent:          #4f98a3;
+      --accent-hover:    #5eb5c2;
+      --accent-glow:     rgba(79,152,163,0.15);
+      --font-display:    'Instrument Serif', Georgia, serif;
+      --font-body:       'Inter', system-ui, sans-serif;
+      --radius-sm:       6px;
+      --radius-md:       10px;
+      --radius-lg:       16px;
+      --shadow-card:     0 1px 3px rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.25);
+      --transition:      180ms cubic-bezier(0.16,1,0.3,1);
+      --max-w:           760px;
+    }
+
+    /* ── RESET ──────────────────────────────────────────── */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth;font-size:16px}
+    body{
+      background:var(--bg);
+      color:var(--text);
+      font-family:var(--font-body);
+      line-height:1.65;
+      min-height:100dvh;
+      padding: 0 20px 80px;
+    }
+    img,svg{display:block}
+    a{color:var(--accent);text-decoration:none;transition:color var(--transition)}
+    a:hover{color:var(--accent-hover)}
+    button{cursor:pointer;font:inherit;border:none;background:none}
+
+    /* ── LAYOUT ─────────────────────────────────────────── */
+    .wrap{max-width:var(--max-w);margin:0 auto}
+
+    /* ── NAV ────────────────────────────────────────────── */
+    nav{
+      position:sticky;top:0;z-index:50;
+      background:rgba(13,15,20,0.85);
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--border);
+      padding:14px 20px;
+    }
+    .nav-inner{
+      max-width:var(--max-w);margin:0 auto;
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+    }
+    .nav-logo{
+      font-family:var(--font-display);
+      font-size:1.15rem;
+      color:var(--text);
+      letter-spacing:0.01em;
+      white-space:nowrap;
+    }
+    .nav-links{display:flex;align-items:center;gap:4px}
+    .nav-links a{
+      color:var(--text-muted);
+      font-size:0.875rem;
+      font-weight:500;
+      padding:6px 12px;
+      border-radius:var(--radius-sm);
+      transition:color var(--transition),background var(--transition);
+    }
+    .nav-links a:hover{color:var(--text);background:var(--surface-offset)}
+    .nav-links a.cta{
+      background:var(--accent);
+      color:#0d0f14;
+      font-weight:600;
+      padding:7px 16px;
+    }
+    .nav-links a.cta:hover{background:var(--accent-hover);color:#0d0f14}
+
+    /* ── HERO ───────────────────────────────────────────── */
+    .hero{
+      padding:72px 0 56px;
+      border-bottom:1px solid var(--border);
+    }
+    .hero-eyebrow{
+      font-size:0.75rem;
+      font-weight:600;
+      letter-spacing:0.12em;
+      text-transform:uppercase;
+      color:var(--accent);
+      margin-bottom:18px;
+    }
+    .hero h1{
+      font-family:var(--font-display);
+      font-size:clamp(2.4rem,5vw,3.8rem);
+      line-height:1.1;
+      color:var(--text);
+      font-weight:400;
+      font-style:italic;
+      letter-spacing:-0.01em;
+      margin-bottom:20px;
+    }
+    .hero-summary{
+      font-size:1.05rem;
+      color:var(--text-muted);
+      max-width:58ch;
+      line-height:1.7;
+      margin-bottom:32px;
+    }
+    .hero-summary strong{color:var(--text);font-weight:500}
+    .hero-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+    .btn-primary{
+      display:inline-flex;align-items:center;gap:8px;
+      background:var(--accent);
+      color:#0d0f14;
+      font-weight:600;
+      font-size:0.875rem;
+      padding:10px 22px;
+      border-radius:var(--radius-sm);
+      transition:background var(--transition),transform var(--transition);
+    }
+    .btn-primary:hover{background:var(--accent-hover);color:#0d0f14;transform:translateY(-1px)}
+    .btn-ghost{
+      display:inline-flex;align-items:center;gap:8px;
+      color:var(--text-muted);
+      font-weight:500;
+      font-size:0.875rem;
+      padding:10px 20px;
+      border-radius:var(--radius-sm);
+      border:1px solid var(--border-strong);
+      transition:color var(--transition),border-color var(--transition),background var(--transition);
+    }
+    .btn-ghost:hover{color:var(--text);border-color:rgba(255,255,255,0.2);background:var(--surface)}
+    .btn-ghost svg,.btn-primary svg{width:15px;height:15px;flex-shrink:0}
+
+    /* ── SECTION GRID ───────────────────────────────────── */
+    .sections{
+      display:grid;
+      gap:16px;
+      padding-top:40px;
+    }
+    .card{
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:var(--radius-lg);
+      padding:28px 32px;
+      box-shadow:var(--shadow-card);
+      transition:border-color var(--transition);
+    }
+    .card:hover{border-color:var(--border-strong)}
+    .card-label{
+      font-size:0.7rem;
+      font-weight:700;
+      letter-spacing:0.14em;
+      text-transform:uppercase;
+      color:var(--text-faint);
+      margin-bottom:14px;
+    }
+    .card h2{
+      font-family:var(--font-display);
+      font-size:1.35rem;
+      font-weight:400;
+      color:var(--text);
+      margin-bottom:10px;
+      line-height:1.3;
+    }
+    .card p{
+      color:var(--text-muted);
+      font-size:0.925rem;
+      line-height:1.7;
+      max-width:66ch;
+    }
+    .card p strong{color:var(--text);font-weight:500}
+
+    /* ── TWO-COL CARDS ──────────────────────────────────── */
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    @media(max-width:540px){.two-col{grid-template-columns:1fr}}
+
+    /* ── SKILLS LIST ────────────────────────────────────── */
+    .skills-grid{
+      display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;
+    }
+    .skill-tag{
+      font-size:0.78rem;
+      font-weight:500;
+      color:var(--text-muted);
+      background:var(--surface-offset);
+      border:1px solid var(--border);
+      padding:4px 12px;
+      border-radius:var(--radius-sm);
+      letter-spacing:0.02em;
+    }
+
+    /* ── TIMELINE ───────────────────────────────────────── */
+    .timeline{list-style:none;margin-top:8px}
+    .timeline li{
+      position:relative;
+      padding:14px 0 14px 22px;
+      border-left:1px solid var(--border);
+    }
+    .timeline li::before{
+      content:'';
+      position:absolute;
+      left:-4px;top:20px;
+      width:7px;height:7px;
+      border-radius:50%;
+      background:var(--accent);
+      box-shadow:0 0 8px var(--accent-glow);
+    }
+    .timeline li:last-child{padding-bottom:0}
+    .tl-title{font-weight:600;font-size:0.9rem;color:var(--text)}
+    .tl-meta{font-size:0.78rem;color:var(--text-faint);margin-top:2px}
+    .tl-body{font-size:0.875rem;color:var(--text-muted);margin-top:6px;max-width:58ch;line-height:1.65}
+
+    /* ── CONTACT BAR ────────────────────────────────────── */
+    .contact-row{
+      display:flex;flex-wrap:wrap;align-items:center;gap:20px;
+      margin-top:6px;
+    }
+    .contact-link{
+      display:inline-flex;align-items:center;gap:7px;
+      color:var(--text-muted);
+      font-size:0.875rem;
+      font-weight:500;
+      transition:color var(--transition);
+    }
+    .contact-link:hover{color:var(--accent)}
+    .contact-link svg{width:15px;height:15px;flex-shrink:0;opacity:.7}
+
+    /* ── DIVIDER ────────────────────────────────────────── */
+    hr{border:none;border-top:1px solid var(--border);margin:0}
+
+    /* ── FOOTER ─────────────────────────────────────────── */
+    footer{
+      text-align:center;
+      padding-top:48px;
+      font-size:0.78rem;
+      color:var(--text-faint);
+    }
+
+    /* ── MOBILE ─────────────────────────────────────────── */
+    @media(max-width:600px){
+      nav{padding:12px 16px}
+      .hero{padding:48px 0 40px}
+      .card{padding:20px}
+      .nav-links a:not(.cta){display:none}
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="tagline">Logistics Operations & Data Systems</div>
-            <h1>Malik Lomax</h1>
-        </header>
 
-        <section class="card">
-            <h2>Professional Profile</h2>
-            <p>20-year operations veteran (Amazon/FedEx) bridging the gap between physical warehouse management and data-driven logistics coordination. I leverage SQL, AWS, and cloud fundamentals to optimize supply chain workflows and resolve inventory discrepancies.</p>
-        </section>
-
-        <section class="card">
-            <h2>Credentials</h2>
-            <p><strong>B.S. Information Technology & Data Management</strong> (In Progress, Strayer University)</p>
-            <p><strong>AWS Certified Cloud Practitioner</strong></p>
-            <a href="https://strayer.badges.parchment.com/my-badges/organization">View Credentials →</a>
-        </section>
-
-        <section class="card">
-            <h2>Contact</h2>
-            <p>Based in Beaver Falls, PA</p>
-            <a href="mailto:maliklomax261@gmail.com">maliklomax261@gmail.com</a>
-        </section>
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-inner">
+    <span class="nav-logo">Malik Lomax</span>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+      <a href="Malik_Lomax_Resume.html" target="_blank" rel="noopener" class="cta">Download Resume</a>
     </div>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="wrap">
+  <section class="hero" id="about">
+    <p class="hero-eyebrow">Logistics Operations &amp; Data Systems</p>
+    <h1>Malik Lomax</h1>
+    <p class="hero-summary">
+      Operations leader with <strong>20+ years in high-volume logistics</strong> (Amazon / FedEx).
+      I bridge the gap between physical warehouse operations and data-driven supply-chain management —
+      applying SQL, cloud fundamentals, and process-improvement thinking to every workflow I touch.
+    </p>
+    <div class="hero-actions">
+      <a href="Malik_Lomax_Resume.html" target="_blank" rel="noopener" class="btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download Resume
+      </a>
+      <a href="https://www.linkedin.com/in/maliklomax" target="_blank" rel="noopener" class="btn-ghost">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+    </div>
+  </section>
+
+  <!-- ── CARDS ── -->
+  <div class="sections">
+
+    <!-- Professional Summary -->
+    <div class="card">
+      <p class="card-label">Professional Summary</p>
+      <p>
+        Twenty years running high-volume logistics floors at Amazon and FedEx builds a particular kind of judgment — you develop an instinct for where systems break down and what it costs.
+        I now combine that operational foundation with <strong>SQL-based audit tooling, AWS cloud knowledge, and data analytics</strong> to surface the discrepancies that cost companies money before they become write-offs.
+        Currently completing a <strong>B.S. in IT &amp; Data Management at Strayer University (GPA 3.5)</strong>, with a focus on database administration and reporting pipelines.
+      </p>
+    </div>
+
+    <!-- Experience Timeline -->
+    <div class="card" id="experience">
+      <p class="card-label">Experience</p>
+      <ul class="timeline">
+        <li>
+          <div class="tl-title">Logistics Operations &amp; Systems Specialist</div>
+          <div class="tl-meta">Freelance · Oct 2023 – Present</div>
+          <p class="tl-body">Developing SQL-based audit tools to identify inventory discrepancies between physical counts and system records. Building audit workflows that trace discrepancy origin, log corrections, and surface recurring issues for corrective action.</p>
+        </li>
+        <li>
+          <div class="tl-title">Logistics Operations Associate</div>
+          <div class="tl-meta">TrueBlue (Amazon / FedEx placements) · Mar 2016 – Dec 2023</div>
+          <p class="tl-body">Tracked incoming/outgoing shipments, verified counts against documentation on high-volume shifts. Identified and resolved physical-to-system discrepancies before downstream impact. Led investigations that prevented shipment errors and reduced rework.</p>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Skills + Credentials row -->
+    <div class="two-col">
+      <div class="card">
+        <p class="card-label">Technical Skills</p>
+        <div class="skills-grid">
+          <span class="skill-tag">SQL / SQLite</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">AWS CLF-C02</span>
+          <span class="skill-tag">Data Reporting</span>
+          <span class="skill-tag">WMS / ERP</span>
+          <span class="skill-tag">Inventory Audit</span>
+          <span class="skill-tag">HTML / CSS</span>
+          <span class="skill-tag">Database Admin</span>
+          <span class="skill-tag">Supply Chain Ops</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <p class="card-label">Credentials</p>
+        <ul class="timeline">
+          <li>
+            <div class="tl-title">AWS Certified Cloud Practitioner</div>
+            <div class="tl-meta">Amazon Web Services</div>
+          </li>
+          <li>
+            <div class="tl-title">B.S. IT &amp; Data Management</div>
+            <div class="tl-meta">Strayer University · In Progress · GPA 3.5</div>
+          </li>
+          <li>
+            <div class="tl-title">AWS Educate — First Class</div>
+            <div class="tl-meta">Amazon Skill Builder</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="card" id="contact">
+      <p class="card-label">Contact</p>
+      <div class="contact-row">
+        <a href="mailto:maliklomax261@gmail.com" class="contact-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+          maliklomax261@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/maliklomax" target="_blank" rel="noopener" class="contact-link">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          linkedin.com/in/maliklomax
+        </a>
+        <span class="contact-link" style="cursor:default;pointer-events:none;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Beaver Falls, PA
+        </span>
+      </div>
+    </div>
+
+  </div><!-- /sections -->
+
+  <footer>
+    <p>&copy; 2026 Malik Lomax · Beaver Falls, PA</p>
+  </footer>
+</div><!-- /wrap -->
+
 </body>
 </html>
