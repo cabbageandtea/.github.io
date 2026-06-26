@@ -1,171 +1,70 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Malik Lomax — Logistics Operations & Data Analysis</title>
-  <meta name="description" content="Malik Lomax — Logistics Operations, Inventory Control, SQL-driven audit workflows, AWS Certified Cloud Practitioner. Based in Beaver County / Pittsburgh." />
-
-  <!-- Premium type: Inter (fallback to system) -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --bg:#f8fafc; /* subtle off-white */
-      --panel:#ffffff;
-      --deep:#0f1724; /* deep slate */
-      --muted:#64748b; /* cool grey */
-      --accent:#0b63d6; /* refined blue */
-      --accent-2:#062e61;
-      --radius:12px;
-      --maxw:1100px;
-      --gap:28px;
-      --card-shadow: 0 8px 30px rgba(12,18,28,0.06);
-      --card-border: 1px solid rgba(15,23,36,0.06);
-    }
-
-    /* Base layout */
-    html,body{height:100%;margin:0;background:var(--bg);font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;color:var(--deep);-webkit-font-smoothing:antialiased}
-    .wrap{max-width:var(--maxw);margin:48px auto;padding:32px}
-
-    header{display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .brand{display:flex;align-items:center;gap:18px}
-    .logo{width:72px;height:72px;border-radius:14px;background:linear-gradient(180deg,#fff,#f2f7ff);display:flex;align-items:center;justify-content:center;border:var(--card-border);font-weight:800;color:var(--accent);font-size:26px}
-    h1{margin:0;font-size:24px;letter-spacing:-0.2px}
-    .subtitle{margin:4px 0 0;color:var(--muted);font-size:13px}
-
-    nav{display:flex;gap:14px;align-items:center}
-    a.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700;transition:transform .15s ease,box-shadow .15s ease,background .15s ease}
-    a.btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(11,99,214,0.12);background:linear-gradient(180deg,var(--accent),var(--accent-2))}
-    a.link{color:var(--accent);text-decoration:none;font-weight:600;transition:color .12s ease}
-    a.link:hover{color:var(--accent-2)}
-
-    main{display:grid;grid-template-columns:1fr 360px;gap:var(--gap);margin-top:32px}
-
-    /* Card system */
-    .card{background:var(--panel);border-radius:var(--radius);padding:24px;border:var(--card-border);box-shadow:var(--card-shadow)}
-    .panel-quiet{background:transparent;border:none;box-shadow:none;padding:0}
-
-    h2{margin:0 0 12px 0;font-size:18px}
-    p.lead{color:var(--muted);line-height:1.6;margin:0}
-
-    .grid-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:18px}
-    .feature{padding:16px;border-radius:10px;border:1px solid rgba(11,99,214,0.04);background:linear-gradient(180deg,rgba(11,99,214,0.015),transparent)}
-    .feature strong{display:block;color:var(--deep);margin-bottom:6px}
-
-    ul.clean{list-style:none;padding:0;margin:0}
-    ul.clean li{padding:10px 0;border-bottom:1px solid #f1f6fb;color:var(--deep)}
-
-    .muted{color:var(--muted)}
-
-    aside .card{padding:20px}
-    .contact dt{font-weight:700;margin-top:12px}
-    .contact dd{margin:4px 0 8px 0}
-
-    footer{margin-top:32px;color:var(--muted);font-size:13px;text-align:center}
-
-    /* Interactive states for links in cards */
-    .cta-row{display:flex;gap:12px;align-items:center;margin-top:18px}
-    .ghost{background:transparent;border:1px solid rgba(11,99,214,0.08);padding:9px 12px;border-radius:10px;color:var(--accent);text-decoration:none;font-weight:700;transition:background .12s ease,color .12s ease,transform .12s}
-    .ghost:hover{background:rgba(11,99,214,0.04);transform:translateY(-2px)}
-
-    /* Responsive */
-    @media (max-width:980px){main{grid-template-columns:1fr} .grid-cards{grid-template-columns:1fr}} 
-    @media (max-width:520px){.logo{width:56px;height:56px;font-size:20px}.wrap{padding:20px;margin:20px}}
-
-    /* Accessibility focus */
-    a:focus{outline:3px solid rgba(11,99,214,0.15);outline-offset:3px}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malik Lomax | Logistics & Data Analytics</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card: #1e293b;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --accent: #38bdf8;
+            --border: #334155;
+        }
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+        }
+        .container { max-width: 800px; margin: 0 auto; }
+        header { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 40px; }
+        h1 { margin: 0; font-size: 2.5rem; letter-spacing: -0.05em; }
+        .tagline { color: var(--accent); font-weight: 600; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 0.1em; }
+        
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+        h2 { font-size: 1.25rem; color: var(--accent); margin-top: 0; }
+        
+        a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: 0.3s; }
+        a:hover { border-bottom: 1px solid var(--accent); }
+        
+        @media (max-width: 600px) { body { padding: 20px; } }
+    </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="brand">
-        <div class="logo" aria-hidden="true">ML</div>
-        <div>
-          <h1>Malik Lomax</h1>
-          <div class="subtitle">Logistics Coordinator • Inventory Control & Shipment Accuracy • SQL & Data Systems</div>
-        </div>
-      </div>
+    <div class="container">
+        <header>
+            <div class="tagline">Logistics Operations & Data Systems</div>
+            <h1>Malik Lomax</h1>
+        </header>
 
-      <nav aria-label="Primary navigation">
-        <a class="link" href="/Malik_Lomax_Resume.html" target="_blank" rel="noopener">Resume</a>
-        <a class="link" href="https://github.com/cabbageandtea/.github.io" target="_blank" rel="noopener">Portfolio</a>
-        <a class="btn" href="mailto:maliklomax261@gmail.com">Contact</a>
-      </nav>
-    </header>
+        <section class="card">
+            <h2>Professional Profile</h2>
+            <p>20-year operations veteran (Amazon/FedEx) bridging the gap between physical warehouse management and data-driven logistics coordination. I leverage SQL, AWS, and cloud fundamentals to optimize supply chain workflows and resolve inventory discrepancies.</p>
+        </section>
 
-    <main>
-      <section>
-        <div class="card">
-          <h2>Professional Summary</h2>
-          <p class="lead">Operations leader with 20+ years in high-volume logistics and distribution. I design and operate audit-first workflows that align ERP/WMS records with physical inventory, prevent shipment errors, and provide auditable corrective actions. AWS Certified Cloud Practitioner. Completing B.S. in IT & Data Management (Strayer University — GPA 3.5).</p>
+        <section class="card">
+            <h2>Credentials</h2>
+            <p><strong>B.S. Information Technology & Data Management</strong> (In Progress, Strayer University)</p>
+            <p><strong>AWS Certified Cloud Practitioner</strong></p>
+            <a href="https://strayer.badges.parchment.com/my-badges/organization">View Credentials →</a>
+        </section>
 
-          <div class="grid-cards">
-            <div class="feature" role="region" aria-label="Inventory Integrity">
-              <strong>Inventory Integrity</strong>
-              <div class="muted">SQL-driven audit tables & reconciliations that reduce reconciliation time and expose recurring root causes.</div>
-            </div>
-
-            <div class="feature" role="region" aria-label="Shipment Verification">
-              <strong>Shipment Verification</strong>
-              <div class="muted">Operational checklists and automated validations to prevent mislabels and short shipments before dispatch.</div>
-            </div>
-
-            <div class="feature" role="region" aria-label="ERP/WMS Mapping">
-              <strong>ERP / WMS Mapping</strong>
-              <div class="muted">Accurate transactional mapping that ensures queries reflect real-world material movement and staging.</div>
-            </div>
-
-            <div class="feature" role="region" aria-label="Reporting & Dashboards">
-              <strong>Reporting & Dashboards</strong>
-              <div class="muted">Operational reports and dashboards built from SQL sources for decision-ready metrics.</div>
-            </div>
-          </div>
-
-          <div class="cta-row">
-            <a class="btn" href="/Malik_Lomax_Resume.html">Download Resume</a>
-            <a class="ghost" href="/Malik_Lomax_Professional_Summary.csv" download>Download Summary (CSV)</a>
-          </div>
-        </div>
-
-        <div style="height:22px"></div>
-
-        <div class="panel-quiet">
-          <!-- Kept intentionally minimal: no "How I add value" section per brief -->
-        </div>
-      </section>
-
-      <aside>
-        <div class="card" id="contact" aria-label="Contact and credentials">
-          <h3 style="margin-top:0;margin-bottom:8px">Contact & Credentials</h3>
-          <dl class="contact">
-            <dt>Location</dt>
-            <dd class="muted">Beaver County / Pittsburgh, PA</dd>
-            <dt>Email</dt>
-            <dd><a class="link" href="mailto:maliklomax261@gmail.com">maliklomax261@gmail.com</a></dd>
-            <dt>LinkedIn</dt>
-            <dd><a class="link" href="https://www.linkedin.com/in/maliklomax/?skipRedirect=true" target="_blank" rel="noopener">linkedin.com/in/maliklomax</a></dd>
-          </dl>
-
-          <hr style="margin:14px 0;border:none;border-top:1px solid #f1f6fb">
-
-          <h4 style="margin:6px 0">Certifications</h4>
-          <ul class="clean muted">
-            <li>AWS Certified Cloud Practitioner</li>
-            <li>AWS Educate — active participant</li>
-            <li>Amazon Skill Builder & Educate — First Class</li>
-          </ul>
-
-          <p style="margin-top:14px"><a class="btn" href="https://github.com/cabbageandtea/.github.io" target="_blank" rel="noopener">View Portfolio (repo)</a></p>
-        </div>
-      </aside>
-    </main>
-
-    <footer>
-      <small class="muted">© Malik Lomax — Logistics Operations & Data Systems. Portfolio: maliklomax.me</small>
-    </footer>
-  </div>
+        <section class="card">
+            <h2>Contact</h2>
+            <p>Based in Beaver Falls, PA</p>
+            <a href="mailto:maliklomax261@gmail.com">maliklomax261@gmail.com</a>
+        </section>
+    </div>
 </body>
 </html>
