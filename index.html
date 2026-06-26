@@ -4,126 +4,152 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Malik Lomax — Logistics Operations & Data Analysis</title>
-  <meta name="description" content="Malik Lomax — 20 years logistics operations; pursuing B.S. in IT & Data Management; seeking Logistics Operations / Data Analysis roles in Beaver County / Pittsburgh." />
+  <meta name="description" content="Malik Lomax — 20 years logistics operations; preventing system-to-floor discrepancies; SQL-driven inventory audit workflows; AWS Certified Cloud Practitioner." />
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Malik Lomax — Logistics Operations & Data Analysis" />
+  <meta property="og:description" content="Operations leader with 20 years in high-volume logistics. Focus: inventory integrity, shipment accuracy, SQL-based audit tooling. Based in Beaver County / Pittsburgh." />
+  <meta property="og:type" content="profile" />
+  <meta property="og:url" content="https://maliklomax.me/" />
+  <meta property="og:image" content="https://cabbageandtea.github.io/favicon.svg" />
+  <meta name="twitter:card" content="summary" />
+
+  <!-- Structured data: Person -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Malik Lomax",
+    "jobTitle": "Logistics Operations & Data Analyst",
+    "url": "https://maliklomax.me/",
+    "sameAs": [
+      "https://www.linkedin.com/in/maliklomax/"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Beaver County",
+      "addressRegion": "PA",
+      "addressCountry": "US"
+    },
+    "email": "mailto:maliklomax261@gmail.com"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <style>
-    :root{
-      --bg:#f6f7fb; --card:#ffffff; --accent:#0b63d6; --muted:#6b7280; --text:#0f1724;
-      --maxw:980px; --radius:10px; --pad:20px;
-    }
-    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;color:var(--text);background:var(--bg)}
-    .wrap{max-width:var(--maxw);margin:36px auto;padding:28px}
-    header{display:flex;gap:16px;align-items:center;justify-content:space-between;margin-bottom:18px}
-    .title{display:flex;gap:14px;align-items:center}
-    .avatar{width:72px;height:72px;border-radius:8px;background:#fff;border:1px solid #e6eefc;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent);font-size:20px}
+    :root{--bg:#ffffff;--panel:#fbfdff;--accent:#0b63d6;--muted:#6b7280;--text:#0b1220;--maxw:1100px}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
+    .wrap{max-width:var(--maxw);margin:40px auto;padding:28px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;gap:18px;align-items:center}
+    .logo{width:64px;height:64px;border-radius:8px;background:linear-gradient(180deg,#fff,#f3f7ff);display:flex;align-items:center;justify-content:center;border:1px solid #eef4ff;font-weight:700;color:var(--accent)}
     h1{margin:0;font-size:22px}
-    p.lead{margin:0;color:var(--muted);font-size:14px}
-    .status{background:#fff;border:1px solid #e6eefc;padding:10px 14px;border-radius:999px;font-weight:600;color:var(--accent);font-size:13px}
-    main{display:grid;grid-template-columns:1fr;gap:18px}
-    .card{background:var(--card);border-radius:var(--radius);padding:var(--pad);box-shadow:0 8px 20px rgba(12,18,28,0.04)}
-    .two{display:grid;grid-template-columns:1fr 340px;gap:18px}
-    .muted{color:var(--muted);font-size:14px}
-    ul.clean{padding:0;margin:0;list-style:none}
-    ul.clean li{padding:8px 0;border-bottom:1px solid #f1f5f9}
-    .btn{display:inline-block;background:var(--accent);color:#fff;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:600}
-    .link{color:var(--accent);text-decoration:none}
-    footer{margin-top:18px;color:var(--muted);font-size:13px;text-align:center}
-    .contact-list{display:flex;flex-direction:column;gap:6px}
-    @media(max-width:880px){.two{grid-template-columns:1fr}.title{flex-direction:row}}
+    .subtitle{margin:2px 0 0;color:var(--muted);font-size:13px}
+    nav{display:flex;gap:12px;align-items:center}
+    a.btn{background:var(--accent);color:#fff;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:600}
+    a.link{color:var(--accent);text-decoration:none}
+    main{display:grid;grid-template-columns:1fr 360px;gap:28px;margin-top:26px}
+    .panel{background:var(--panel);border-radius:12px;padding:22px;box-shadow:0 10px 30px rgba(12,18,28,0.05)}
+    h2{margin:0 0 12px 0}
+    p.lead{color:var(--muted);line-height:1.5}
+    ul.clean{margin:0;padding:0;list-style:none}
+    ul.clean li{margin:8px 0;padding:6px 0;border-bottom:1px solid #f1f6fb}
+    .muted{color:var(--muted)}
+    footer{margin-top:28px;color:var(--muted);font-size:13px;text-align:center}
+    .contact dt{font-weight:700;margin-top:8px}
+    .contact dd{margin:0 0 8px 0}
+    @media(max-width:980px){main{grid-template-columns:1fr};header{flex-direction:column;align-items:flex-start}}
   </style>
+
+  <!-- Analytics placeholder: insert your GA/Tag ID here -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX');
+  </script> -->
 </head>
 <body>
   <div class="wrap">
     <header>
-      <div class="title">
-        <div class="avatar" aria-hidden="true">ML</div>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">ML</div>
         <div>
           <h1>Malik Lomax</h1>
-          <p class="lead">Logistics Operations | Inventory Control & Shipment Accuracy | SQL & Data Systems</p>
+          <div class="subtitle">Logistics Coordinator • Inventory Control & Shipment Accuracy • SQL & Data Systems • AWS</div>
         </div>
       </div>
-      <div class="status" aria-hidden="false">
-        B.S. candidate — IT & Data Management (Strayer University) • Seeking Logistics Ops / Data Analysis roles — Beaver County / Pittsburgh
-      </div>
+      <nav>
+        <a class="link" href="/Malik_Lomax_Resume.html" target="_blank">Resume</a>
+        <a class="link" href="/Malik_Lomax_Professional_Summary.csv" download>Summary</a>
+        <a class="btn" href="mailto:maliklomax261@gmail.com">Contact</a>
+      </nav>
     </header>
 
     <main>
-      <section class="card">
-        <h2 style="margin-top:0;margin-bottom:8px">Professional Summary</h2>
-        <p class="muted" style="margin:0 0 10px 0">
-          Results-driven logistics professional with 20 years managing high-volume warehouse and fulfillment operations. Strategic operator who applies data analysis and systems knowledge to prevent system-to-floor discrepancies, improve shipment accuracy, and reduce operational costs. First Class certified in Amazon Skill Builder & Educate. AWS Certified Cloud Practitioner. Currently completing a B.S. in IT & Data Management with a focus on SQL and Database Administration.
-        </p>
+      <section>
+        <div class="panel">
+          <h2>Professional Summary</h2>
+          <p class="lead">Operations leader with 20+ years in high-volume logistics and industrial environments. I focus on aligning physical inventory with system records, preventing shipment errors, and building SQL-driven audit and reconciliation tools that produce reliable, auditable outcomes for ERP/WMS systems. Currently completing a B.S. in IT & Data Management (Strayer University — GPA 3.5). AWS Certified Cloud Practitioner.</p>
 
-        <div class="two" style="margin-top:14px">
-          <div>
-            <h3 style="margin:8px 0">Experience Highlights</h3>
-            <ul class="clean">
-              <li><strong>High-volume fulfillment:</strong> Operational leadership in parcel and warehouse environments; metrics-driven performance improvements.</li>
-              <li><strong>Inventory integrity:</strong> Cycle count accuracy, discrepancy detection and reconciliation workflows.</li>
-              <li><strong>Data & systems:</strong> SQL-based audit tools, ERP/WMS data mapping, and operational reporting.</li>
-              <li><strong>Process & safety:</strong> SOP development, capacity planning, and continuous improvement initiatives.</li>
-            </ul>
+          <h3 style="margin-top:18px">Selected projects & outcomes</h3>
+          <ul class="clean">
+            <li><strong>Inventory Integrity Audit System</strong> — SQL-based audit tables and triggers that track physical counts, reconcile against system quantities, and log every correction (repo/portfolio available).</li>
+            <li><strong>Shipment Verification Workflows</strong> — Operational checks and data validations that reduced misshipments and mislabels (details available in portfolio).</li>
+            <li><strong>ERP/WMS Data Mapping</strong> — Mapped transactional flows to operational steps to reduce reconciliation ambiguity and speed audits.</li>
+          </ul>
 
-            <h3 style="margin:16px 0 8px 0">Target Roles</h3>
-            <ul class="clean">
-              <li>Logistics Operations Coordinator / Supervisor</li>
-              <li>Fulfillment Operations Analyst</li>
-              <li>Data Analyst — Supply Chain / Logistics</li>
-            </ul>
+          <h3 style="margin-top:18px">What I bring</h3>
+          <ul class="clean">
+            <li>Operational credibility: 20+ years in frontline logistics and distribution under production pressure.</li>
+            <li>Data-first approach: SQL, audit trails, and dashboards that reduce manual work and improve decision-making.</li>
+            <li>Cross-functional delivery: coordinate operations, IT, and quality teams to build durable fixes.</li>
+          </ul>
 
-            <p style="margin-top:14px">Download professional summary: <a class="btn" href="Malik_Lomax_Professional_Summary.csv" download>Download CSV</a></p>
-            <p style="margin-top:8px">View full portfolio: <a class="btn" href="https://maliklomax.me" target="_blank" rel="noopener">Visit maliklomax.me</a></p>
-          </div>
+          <p style="margin-top:18px">View my full portfolio at <a class="link" href="https://maliklomax.me" target="_blank" rel="noopener">maliklomax.me</a> or download the one-page resume above.</p>
+        </div>
 
-          <aside>
-            <div class="card" id="contact" aria-label="Contact and credentials">
-              <h4 style="margin:6px 0">Professional Credentials</h4>
-              <p class="muted" style="margin:6px 0 10px 0">Verified Strayer University badges and academic records</p>
-              <p><a class="link" href="https://strayer.badges.parchment.com/my-badges/organization" target="_blank" rel="noopener">Strayer University — badges (verified)</a></p>
+        <div style="height:18px"></div>
 
-              <hr style="margin:10px 0;border:none;border-top:1px solid #eef2f8">
-
-              <h4 style="margin:6px 0">Certifications & Focus</h4>
-              <ul class="clean" style="margin-top:8px">
-                <li><strong>AWS Certified Cloud Practitioner</strong></li>
-                <li>AWS Educate — active participant</li>
-                <li>Amazon Skill Builder & Educate — First Class certified</li>
-                <li>Focus: SQL / Database Administration</li>
-              </ul>
-
-              <hr style="margin:10px 0;border:none;border-top:1px solid #eef2f8">
-
-              <h4 style="margin:6px 0">Contact</h4>
-              <div class="contact-list">
-                <div class="muted"><strong>Location:</strong> Beaver County / Pittsburgh, PA</div>
-                <div class="muted"><strong>Email:</strong> <a class="link" href="mailto:maliklomax261@gmail.com">maliklomax261@gmail.com</a></div>
-                <div class="muted"><strong>Portfolio:</strong> <a class="link" href="https://maliklomax.me" target="_blank" rel="noopener">maliklomax.me</a></div>
-                <div class="muted"><strong>LinkedIn:</strong> <a class="link" href="https://www.linkedin.com/in/maliklomax/?skipRedirect=true" target="_blank" rel="noopener">linkedin.com/in/maliklomax</a></div>
-              </div>
-
-              <p style="margin-top:12px"><a class="btn" href="Malik_Lomax_Professional_Summary.csv" download>Download Summary</a></p>
-            </div>
-          </aside>
+        <div class="panel" style="margin-top:18px">
+          <h3 style="margin-top:0">Target roles</h3>
+          <ul class="clean">
+            <li>Logistics Coordinator / Inventory Coordinator</li>
+            <li>Materials / Fulfillment Operations Analyst</li>
+            <li>Supply Chain Data Analyst (SQL-focused)</li>
+          </ul>
         </div>
       </section>
 
-      <section class="card">
-        <h3 style="margin-top:0">Education</h3>
-        <p class="muted" style="margin:0 0 6px 0"><strong>Strayer University</strong> — B.S., IT & Data Management (in progress), GPA 3.5</p>
-        <p class="muted" style="margin:8px 0 0 0"><strong>Professional development</strong>: Amazon Skill Builder & Educate (First Class certified); AWS Educate participation.</p>
-      </section>
+      <aside>
+        <div class="panel" id="contact" aria-label="Contact and credentials">
+          <h3 style="margin-top:0">Contact & Credentials</h3>
+          <dl class="contact">
+            <dt>Location</dt>
+            <dd class="muted">Beaver County / Pittsburgh, PA</dd>
+            <dt>Email</dt>
+            <dd><a class="link" href="mailto:maliklomax261@gmail.com">maliklomax261@gmail.com</a></dd>
+            <dt>Portfolio</dt>
+            <dd><a class="link" href="https://maliklomax.me" target="_blank" rel="noopener">maliklomax.me</a></dd>
+            <dt>LinkedIn</dt>
+            <dd><a class="link" href="https://www.linkedin.com/in/maliklomax/?skipRedirect=true" target="_blank" rel="noopener">linkedin.com/in/maliklomax</a></dd>
+          </dl>
 
-      <section class="card">
-        <h3 style="margin-top:0">How I add value</h3>
-        <ul class="clean" style="margin-top:8px">
-          <li><strong>Operational credibility:</strong> 20 years of frontline and supervisory experience in high-volume warehouses.</li>
-          <li><strong>Data lens:</strong> Translate operational KPIs to SQL queries and dashboards for forecasting and staffing.</li>
-          <li><strong>Cross-team delivery:</strong> Coordinate operations, safety, and IT to implement practical automation and reporting.</li>
-        </ul>
-      </section>
+          <hr style="margin:12px 0;border:none;border-top:1px solid #f1f6fb">
+
+          <h4 style="margin:6px 0">Certifications</h4>
+          <ul class="clean muted">
+            <li>AWS Certified Cloud Practitioner</li>
+            <li>AWS Educate — active participant</li>
+            <li>Amazon Skill Builder & Educate — First Class</li>
+          </ul>
+
+          <p style="margin-top:12px"><a class="btn" href="/Malik_Lomax_Resume.html">Download Resume</a></p>
+        </div>
+      </aside>
     </main>
 
     <footer>
-      Malik Lomax — Seeking Logistics Operations / Data Analysis roles in Beaver County / Pittsburgh.
+      <small class="muted">© Malik Lomax — Logistics Operations & Data Systems. Portfolio: maliklomax.me</small>
     </footer>
   </div>
 </body>
