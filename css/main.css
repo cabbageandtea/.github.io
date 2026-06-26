@@ -297,6 +297,41 @@ section { padding-block: clamp(4.5rem, 9vw, 7rem); }
   background: var(--line);
 }
 
+.recruiter-bar {
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+  padding: 0.85rem 0;
+}
+
+.recruiter-bar-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem 1rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.recruiter-bar-inner strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.recruiter-bar-inner a {
+  color: var(--accent-deep);
+  font-weight: 600;
+}
+
+.recruiter-bar-inner a:hover { color: var(--accent); }
+
+.recruiter-bar-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--line);
+  flex-shrink: 0;
+}
+
 /* About */
 .about-grid {
   display: grid;
@@ -502,10 +537,44 @@ section { padding-block: clamp(4.5rem, 9vw, 7rem); }
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: 1.5rem;
   margin-top: 3rem;
 }
+
+.outcomes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.outcome-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 1.35rem 1.5rem;
+  background: var(--surface);
+}
+
+.outcome-card h3 {
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin-bottom: 0.45rem;
+  color: var(--ink);
+}
+
+.outcome-card p {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.cred-list a {
+  color: var(--accent-deep);
+  font-weight: 600;
+}
+
+.cred-list a:hover { color: var(--accent); }
 
 .project-card {
   position: relative;
@@ -882,6 +951,7 @@ section { padding-block: clamp(4.5rem, 9vw, 7rem); }
   .hero-stats { grid-template-columns: repeat(2, 1fr); }
   .about-grid { grid-template-columns: 1fr; }
   .project-grid { grid-template-columns: 1fr; }
+  .outcomes-grid { grid-template-columns: 1fr; }
   .project-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr 1fr; }
   .cred-grid { grid-template-columns: 1fr; }

@@ -23,6 +23,12 @@ body {
 
 .resume-bar .btn { padding: 0.65rem 1.15rem; font-size: 0.8rem; }
 
+.resume-print-hint {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin: -1.25rem 0 1.75rem;
+}
+
 .resume-header {
   padding-bottom: 1.25rem;
   margin-bottom: 1.5rem;
