@@ -64,24 +64,6 @@ section { padding-block: clamp(4.5rem, 9vw, 7rem); }
   color: var(--white) !important;
 }
 
-.nav-linkedin {
-  display: inline-flex !important;
-  align-items: center;
-  gap: 0.35rem;
-  padding: 0.5rem 0.95rem !important;
-  background: #0a66c2 !important;
-  color: var(--white) !important;
-  border-radius: 999px;
-  font-size: 0.8rem !important;
-  font-weight: 600 !important;
-}
-
-.nav-linkedin:hover,
-.nav.scrolled .nav-linkedin:hover {
-  background: #004182 !important;
-  color: var(--white) !important;
-}
-
 /* Hero */
 .hero {
   position: relative;
