@@ -3,261 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Module 1: Inventory Integrity Audit</title>
+    <title>Malik Lomax | Logistics Operations & Data Systems</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
-        
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-        }
-        
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 40px 30px;
-            text-align: center;
-        }
-        
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-        
-        header p {
-            font-size: 1.1em;
-            opacity: 0.9;
-        }
-        
-        .content {
-            padding: 40px 30px;
-        }
-        
-        .section {
-            margin-bottom: 40px;
-        }
-        
-        .section h2 {
-            color: #667eea;
-            font-size: 1.8em;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #667eea;
-            padding-bottom: 10px;
-        }
-        
-        .section h3 {
-            color: #764ba2;
-            font-size: 1.3em;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-        
-        .section ul {
-            list-style: none;
-            padding-left: 20px;
-        }
-        
-        .section ul li {
-            margin-bottom: 10px;
-            padding-left: 20px;
-            position: relative;
-        }
-        
-        .section ul li:before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: #667eea;
-            font-weight: bold;
-        }
-        
-        .gist-container {
-            background: #f5f5f5;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 20px;
-            margin: 20px 0;
-            overflow-x: auto;
-        }
-        
-        .gist-embed {
-            max-width: 100%;
-            margin: 20px 0;
-        }
-        
-        .button-group {
-            display: flex;
-            gap: 15px;
-            margin: 30px 0;
-            flex-wrap: wrap;
-        }
-        
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 12px 24px;
-            font-size: 1em;
-            font-weight: 600;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-        }
-        
-        .btn-secondary {
-            background: white;
-            color: #667eea;
-            border: 2px solid #667eea;
-        }
-        
-        .btn-secondary:hover {
-            background: #f0f0f0;
-            transform: translateY(-2px);
-        }
-        
-        .code-block {
-            background: #2d2d2d;
-            color: #f8f8f2;
-            padding: 15px;
-            border-radius: 5px;
-            overflow-x: auto;
-            font-family: 'Courier New', monospace;
-            font-size: 0.9em;
-            line-height: 1.4;
-        }
-        
-        footer {
-            background: #f5f5f5;
-            padding: 20px 30px;
-            text-align: center;
-            color: #666;
-            border-top: 1px solid #ddd;
-        }
-        
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.8em;
-            }
-            
-            .content {
-                padding: 20px 15px;
-            }
-            
-            .button-group {
-                flex-direction: column;
-            }
-            
-            .btn {
-                width: 100%;
-                justify-content: center;
-            }
-        }
+        :root { --bg: #0f172a; --surface: #1e293b; --text: #f8fafc; --accent: #38bdf8; }
+        body { background: var(--bg); color: var(--text); font-family: sans-serif; margin: 0; padding: 40px 20px; line-height: 1.6; }
+        .container { max-width: 700px; margin: 0 auto; }
+        header { border-bottom: 1px solid #334155; padding-bottom: 30px; margin-bottom: 40px; }
+        h1 { margin: 0; font-size: 2rem; }
+        .title { color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.8rem; margin-bottom: 10px; }
+        .card { background: var(--surface); padding: 30px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #334155; }
+        h2 { color: var(--accent); font-size: 1.2rem; margin-top: 0; }
+        .btn { display: inline-block; background: var(--accent); color: #000; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: bold; margin-top: 15px; }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>📦 Inventory Integrity Audit</h1>
-            <p>Portfolio Module 1: SQL JOINs & Database Automation</p>
+            <div class="title">Logistics Operations & Data Systems</div>
+            <h1>Malik Lomax</h1>
+            <a href="Malik_Lomax_Resume.pdf" class="btn">Download PDF Resume</a>
         </header>
-        
-        <div class="content">
-            <!-- Overview Section -->
-            <div class="section">
-                <h2>Project Overview</h2>
-                <p>A professional-grade SQL solution for tracking warehouse stock levels and discrepancies. This project demonstrates advanced database techniques including JOINs for data validation and triggers for automated audit trails.</p>
-            </div>
-            
-            <!-- Key Components -->
-            <div class="section">
-                <h2>Components</h2>
-                <h3>📋 Inventory Table</h3>
-                <p>System of record for part numbers and quantities with data integrity checks.</p>
-                
-                <h3>📝 Audit Table</h3>
-                <p>Captures physical counts to identify mismatches between system records and actual inventory.</p>
-                
-                <h3>⚙️ Automation</h3>
-                <p>Uses a Database Trigger to log every change automatically without manual intervention.</p>
-            </div>
-            
-            <!-- How It Works -->
-            <div class="section">
-                <h2>How It Works</h2>
-                <p>The system uses a JOIN to compare system records against manual counts, while the TRIGGER ensures an audit trail exists without requiring manual log entry. This is a foundational pattern for Database Administration (DBA).</p>
-                
-                <h3>Key Queries</h3>
-                <ul>
-                    <li><strong>Audit Report:</strong> Highlights items where system vs. actual counts don't match</li>
-                    <li><strong>Hot List:</strong> Identifies the Top 5 parts with the most frequent audit mismatches</li>
-                    <li><strong>Discrepancy Analysis:</strong> Calculates the variance between expected and physical quantities</li>
-                </ul>
-            </div>
-            
-            <!-- Action Buttons -->
-            <div class="section">
-                <h2>View Full Code</h2>
-                <div class="button-group">
-                    <a href="https://gist.github.com/cabbageandtea/cd23ed9bf6418d8667dad1b96827343b" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-                        🔗 View on GitHub Gist
-                    </a>
-                    <a href="https://gist.github.com/cabbageandtea/cd23ed9bf6418d8667dad1b96827343b/raw" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
-                        📥 Download Raw SQL
-                    </a>
-                </div>
-            </div>
-            
-            <!-- Embedded Gist -->
-            <div class="section">
-                <h2>Code Preview</h2>
-                <script src="https://gist.github.com/cabbageandtea/cd23ed9bf6418d8667dad1b96827343b.js"></script>
-            </div>
-            
-            <!-- Technical Details -->
-            <div class="section">
-                <h2>Technical Highlights</h2>
-                <ul>
-                    <li><strong>SQL Joins:</strong> INNER JOIN for matching inventory records with audit logs</li>
-                    <li><strong>Data Validation:</strong> CHECK constraints to ensure data integrity</li>
-                    <li><strong>Aggregation:</strong> GROUP BY and ORDER BY for trend analysis</li>
-                    <li><strong>Scalability:</strong> Designed to handle large warehouse datasets</li>
-                </ul>
-            </div>
-        </div>
-        
-        <footer>
-            <p>© 2026 Portfolio | <a href="https://github.com/cabbageandtea" style="color: #667eea; text-decoration: none;">@cabbageandtea</a></p>
-        </footer>
+
+        <section class="card">
+            <h2>Professional Summary</h2>
+            <p>Operations leader with 20+ years in high-volume logistics (Amazon/FedEx). I bridge the gap between physical warehouse operations and data-driven logistics management. Currently completing a B.S. in IT & Data Management at Strayer University.</p>
+        </section>
+
+        <section class="card">
+            <h2>Core Competencies</h2>
+            <p><strong>Inventory Integrity:</strong> SQL-driven audit tables & reconciliations.</p>
+            <p><strong>Shipment Verification:</strong> Automated validation workflows.</p>
+            <p><strong>Logistics Tech:</strong> WMS/ERP Mapping & AWS Cloud Practitioner.</p>
+        </section>
     </div>
 </body>
 </html>
