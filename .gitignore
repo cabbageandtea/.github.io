@@ -7,5 +7,8 @@ Malik_Lomax_Resume_Turner.pdf
 Malik_Lomax_Cover_Letter_Turner.html
 Malik_Lomax_Professional_Summary_Turner.csv
 
+# Private student/academic reference — do not deploy
+Malik_Lomax_Student_Profile.md
+
 # Local build helper for social preview image (PNG is committed)
 og-image.html
