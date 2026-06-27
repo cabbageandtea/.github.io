@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Inventory Reconciliation Case Study &mdash; Malik Lomax</title>
-  <meta name="description" content="Case study: inventory reconciliation workflow for warehouse operations — audit trails, variance reporting, and WMS accuracy." />
-  <meta property="og:title" content="Inventory Reconciliation Case Study — Malik Lomax" />
-  <meta property="og:description" content="How floor-first reconciliation catches WMS mismatches before they become shipment errors." />
+  <title>Warehouse Inventory Integrity Audit System &mdash; Malik Lomax</title>
+  <meta name="description" content="SQL case study: Warehouse Inventory Integrity Audit System — inventory tables, audit triggers, and JOIN-based discrepancy flagging for WMS reconciliation." />
+  <meta property="og:title" content="Warehouse Inventory Integrity Audit System — Malik Lomax" />
+  <meta property="og:description" content="Professional-grade SQL solution for tracking warehouse stock levels and reconciling physical counts against system records." />
   <meta property="og:url" content="https://maliklomax.me/portfolio-inventory-audit.html" />
   <meta property="og:type" content="article" />
   <meta property="og:image" content="https://maliklomax.me/og-image.png" />
@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/subpage.css?v=5" />
+  <link rel="stylesheet" href="css/subpage.css?v=6" />
 </head>
 <body>
 
@@ -28,20 +28,20 @@
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
         Back to portfolio
       </a>
-      <span class="sub-tag">Case Study &middot; Reconciliation</span>
+      <span class="sub-tag">Project &middot; SQL &amp; Reconciliation</span>
     </div>
   </div>
 
   <header class="sub-hero">
     <div class="wrap sub-hero-content">
-      <h1>Inventory Integrity Audit</h1>
-      <p>Reconciliation workflow from 20 years of floor experience &mdash; Problem, action, and measurable shift-level outcomes for WMS accuracy.</p>
+      <h1>Warehouse Inventory Integrity Audit System</h1>
+      <p>A professional-grade SQL solution for tracking warehouse stock levels and reconciling physical counts against system records &mdash; built from the same reconciliation logic used in real WMS environments.</p>
       <div class="pill-row">
-        <span class="pill">Reconciliation</span>
+        <span class="pill">SQL</span>
+        <span class="pill">Database Triggers</span>
         <span class="pill">Audit Trails</span>
-        <span class="pill">Variance Reports</span>
-        <span class="pill">WMS Accuracy</span>
-        <span class="pill">Root-Cause Tracking</span>
+        <span class="pill">WMS Reconciliation</span>
+        <span class="pill">Variance Reporting</span>
       </div>
     </div>
   </header>
@@ -50,72 +50,72 @@
 
     <section class="sub-section">
       <h2>Problem</h2>
-      <p>On a high-volume floor, WMS mismatches from mislabels, short shipments, and receiving errors surface too late in the shift. By the time a coordinator sees the gap, pick errors and customer impact are already in motion.</p>
+      <p>Undetected inventory errors cause stockouts, inaccurate shipments, and reporting failures. On a high-volume floor, WMS mismatches from mislabels, short shipments, and receiving errors surface too late in the shift. By the time an analyst sees the gap, pick errors and customer impact are already in motion.</p>
     </section>
 
     <section class="sub-section">
-      <h2>Action</h2>
+      <h2>Components</h2>
       <div class="card-grid">
         <article class="info-card">
-          <h3>Compare</h3>
-          <p>Match system inventory records against physical counts to surface SKUs where on-hand does not match what is on the shelf or in staging.</p>
+          <h3>Inventory Table</h3>
+          <p>System of record for part numbers and quantities on hand &mdash; the authoritative source every audit comparison runs against.</p>
         </article>
         <article class="info-card">
-          <h3>Log</h3>
-          <p>Capture every inventory change automatically so audit trails stay intact across shift changes.</p>
+          <h3>Audit Table</h3>
+          <p>Captures physical counts and compares them against system records to surface mismatches by item, location, and variance amount.</p>
         </article>
         <article class="info-card">
-          <h3>Report</h3>
-          <p>Produce variance reports and hot lists by shift and zone so supervisors act during handoff.</p>
+          <h3>Automated Trigger</h3>
+          <p>A database trigger logs every inventory change automatically &mdash; no manual entry required. Complete, timestamped audit trail for every transaction.</p>
         </article>
       </div>
     </section>
 
     <section class="sub-section">
+      <h2>How it works</h2>
+      <p>Uses a SQL <strong>JOIN</strong> to compare the Inventory Table against the Audit Table, flagging discrepancies by item, location, and variance amount. The trigger ensures a complete, timestamped audit trail exists for every transaction &mdash; the same discipline required for shipping orders, work orders, and inventory records in industrial materials logistics.</p>
+    </section>
+
+    <section class="sub-section">
       <h2>Results</h2>
       <ul class="bullet-list">
-        <li><strong>Faster shift close-out</strong> &mdash; less manual count-vs-system comparison time at end of shift</li>
-        <li><strong>Repeat pattern detection</strong> &mdash; SKUs and zones driving recurring discrepancies flagged for corrective action</li>
+        <li><strong>Faster reconciliation</strong> &mdash; automated comparison replaces manual count-vs-system hunts at shift close-out</li>
+        <li><strong>Complete audit trail</strong> &mdash; every inventory change logged with timestamps, no reliance on floor staff memory</li>
+        <li><strong>Repeat pattern detection</strong> &mdash; items and locations driving recurring discrepancies flagged for corrective action</li>
         <li><strong>Fewer downstream errors</strong> &mdash; mismatches caught before they become pick failures or shipment exceptions</li>
-        <li><strong>Supervisor-ready handoffs</strong> &mdash; reports formatted for corrective action during shift changeover</li>
       </ul>
     </section>
 
     <section class="sub-section">
-      <h2>Documentation discipline</h2>
-      <p>Every variance logged ties back to manifest and order accuracy &mdash; the same discipline required for shipping orders, work orders, and inventory records in industrial materials logistics. Physical count, system record, and shipping documentation must agree before material moves to the next step.</p>
-    </section>
-
-    <section class="sub-section">
-      <h2>Why this matters for logistics coordination</h2>
-      <p>Coordinators do not need more dashboards. They need variance surfaced early, documented clearly, and handed off in a form supervisors can act on during the shift.</p>
+      <h2>Why this matters for operations analysis</h2>
+      <p>Analysts don&rsquo;t need more dashboards disconnected from the floor. They need variance surfaced early, documented clearly in SQL, and handed off in a form supervisors can act on during the shift.</p>
       <ul class="bullet-list">
         <li><strong>Catch errors upstream</strong> &mdash; mislabels and receiving mistakes flagged before pick and outbound</li>
         <li><strong>Protect inventory records</strong> &mdash; physical count, system on-hand, and documentation stay aligned</li>
-        <li><strong>Speed shift close-out</strong> &mdash; automated comparison replaces manual count-vs-system hunts at handoff</li>
-        <li><strong>Target repeat problems</strong> &mdash; trend data shows which SKUs and zones need corrective action</li>
+        <li><strong>Map data to reality</strong> &mdash; queries reflect real material movement and staging, not abstract aggregates</li>
+        <li><strong>Target repeat problems</strong> &mdash; trend data shows which items and locations need corrective action</li>
       </ul>
     </section>
 
     <section class="sub-section">
-      <h2>Technical approach (summary)</h2>
-      <p>Outcome-focused workflow built from floor operations &mdash; not a code demo. Each step maps to work a coordinator recognizes on a live warehouse or materials desk.</p>
+      <h2>Technical approach</h2>
+      <p>Outcome-focused SQL workflow built from 20 years of floor operations. Each component maps to work an operations analyst or coordinator recognizes on a live warehouse floor.</p>
       <div class="card-grid card-grid--two">
         <article class="info-card">
-          <h3>Data matching</h3>
-          <p>System records joined to physical audit counts so variance is detected before it propagates to outbound or customer impact.</p>
+          <h3>SQL JOIN matching</h3>
+          <p>Inventory records joined to physical audit counts so variance is detected before it propagates to outbound or customer impact.</p>
         </article>
         <article class="info-card">
-          <h3>Integrity checks</h3>
-          <p>Valid data enforced at entry so bad records are caught before they pollute inventory history across shifts.</p>
+          <h3>Trigger-based logging</h3>
+          <p>Inventory changes tracked automatically without relying on floor staff to remember manual entries during turnover or supervisor changes.</p>
         </article>
         <article class="info-card">
-          <h3>Automated logging</h3>
-          <p>Inventory changes tracked without relying on floor staff to remember manual entries during turnover or supervisor changes.</p>
+          <h3>Variance flagging</h3>
+          <p>Discrepancies ranked by item, location, and variance amount so corrective action targets repeat offenders, not one-off noise.</p>
         </article>
         <article class="info-card">
-          <h3>Trend analysis</h3>
-          <p>Top mismatch SKUs and zones ranked so corrective action targets repeat offenders, not one-off noise.</p>
+          <h3>ERP/WMS alignment</h3>
+          <p>Data model reflects real material movement and staging workflows &mdash; the same reconciliation logic used in production WMS environments.</p>
         </article>
       </div>
     </section>
@@ -124,7 +124,7 @@
 
   <footer class="site-footer">
     <div class="wrap site-footer-inner">
-      <p>&copy; 2026 Malik Lomax &middot; Logistics Coordinator</p>
+      <p>&copy; 2026 Malik Lomax &middot; Operations Analyst</p>
       <div class="site-footer-links">
         <a href="/">Portfolio</a>
         <a href="Malik_Lomax_Resume.pdf" download>Resume (PDF)</a>
