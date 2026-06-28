@@ -1,0 +1,43 @@
+---
+description: Malik Lomax career context, perks status, and when to surface student resources
+alwaysApply: true
+---
+
+# Malik Lomax — Career & Perks Context
+
+## Professional target
+- **Role:** Operations Analyst (full-time) — logistics, supply chain, inventory, reconciliation
+- **Location:** Beaver Falls / Greater Pittsburgh
+- **Lead with:** 20 years floor ops + SQL / ERP-WMS reconciliation — not AI tools or "building websites"
+- **Public GPA:** **3.43** (iCampus source: 3.435 — never use 3.5)
+- **Degree:** B.S. IT, Data Management concentration — Class of 2027
+
+## Source of truth (read when relevant — not every message)
+| Need | File |
+|---|---|
+| Student perks, accounts, coursework, interview talking points | `Malik_Lomax_Student_Profile.md` (local, gitignored) |
+| Public portfolio copy | `index.html` → [maliklomax.me](https://maliklomax.me) |
+| Resume | `Malik_Lomax_Resume.html` / `.pdf` (local, gitignored) |
+| GitHub remote | `cabbageandtea/.github.io` |
+
+## When to check perks / extras
+Surface **only** when the user is working on: job search, resume, LinkedIn, interviews, student accounts, coursework tools, or asks "anything else" / "what do I have."
+
+**Do not** run a full perks audit on unrelated tasks (code fixes, deploys, general questions).
+
+## Perks status — setup complete (Jun 2026)
+Active and sufficient — do not re-push unless user asks:
+- Strayer iCampus + Learn & Earn 7/7 + M365 desktop Office
+- GitHub Student Pack (to May 2028) + Copilot Student + Pages/maliklomax.me
+- AWS Educate + Skill Builder (CCP certified)
+- LinkedIn aligned with site
+
+**Parked / skip unless asked:** Azure $100, GitHub Pack partner offers (DataCamp, Deepnote, etc.), extra MCP auth (Slack, Stripe, Render, Figma), `gh` CLI, Cursor Pro student discount.
+
+**Highest ROI when job-searching:** Strayer Career Center coach — not collecting more perks.
+
+## Agent behavior
+- Minimize scope; match existing repo conventions
+- Never commit gitignored local files (student profile, resume) unless user explicitly asks
+- Never commit unless user explicitly asks
+- Do not connect integrations or open duplicate browser tabs for account setup without clear need

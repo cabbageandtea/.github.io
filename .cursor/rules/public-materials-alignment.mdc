@@ -1,0 +1,30 @@
+---
+description: Keep portfolio, resume, and LinkedIn-facing copy aligned
+globs: index.html,Malik_Lomax_Resume*,Malik_Lomax_Professional_Summary.csv
+alwaysApply: false
+---
+
+# Public Materials Alignment
+
+When editing matched files, keep cross-channel consistency.
+
+## Required consistency
+| Field | Value |
+|---|---|
+| Headline focus | Operations Analyst · logistics / supply chain / SQL |
+| GPA | **3.43** only |
+| Graduation | Class of 2027 |
+| Employment framing | Career Development · Full-time — **no Freelance** |
+
+## Remove / avoid
+- Unit-volume metrics (e.g. 3,500+ units/day)
+- Leading with Copilot, Cursor, Playwright, or "I built my website"
+- GPA 3.5 or unrounded 3.435 on public-facing copy
+
+## TrueBlue / logistics bullets
+- Floor ops, reconciliation, audit workflows, WMS/ERP, inventory accuracy
+- SQL and data management as analyst tools — not developer identity
+
+## After public site edits
+- User pushes when ready; site deploys from `main` via GitHub Pages
+- Remind to sync LinkedIn if headline, GPA, or experience bullets changed
